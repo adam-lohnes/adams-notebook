@@ -10,31 +10,36 @@
 <body>
     <header>
         <div class="container">
-            <h1>Adam's Notebook</h1>
+            <h1><a href="index.html">Adam's Notebook</a></h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
                     <li><a href="posts.html">All Posts</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="posts/2025/03/06/hello-world.html">About</a></li>
                 </ul>
             </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                    <span class="sun-moon"></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <main class="container">
-        <section class="intro">
+        <!-- <section class="intro">
             <h2>Welcome to my blog!</h2>
             <p>This is where I share my thoughts, projects, and experiences.</p>
-        </section>
+        </section> -->
 
         <section class="recent-posts">
             <h2>Recent Posts</h2>
             <div class="posts-grid">
                 <!-- These will be populated dynamically with JavaScript or manually as you add posts -->
                 <article class="post-card">
-                    <h3><a href="posts/hello-world.html">Hello World</a></h3>
-                    <div class="post-meta">April 24, 2024</div>
-                    <p>My first blog post and introduction to Adam's Notebook.</p>
+                    <h3><a href="posts/2025/03/06/hello-world.html">Hello World</a></h3>
+                    <div class="post-meta">March 6, 2025</div>
+                    <p>An introduction to Adam's Notebook and what to expect: software projects, thoughts on AI, and personal reflections on life and learning.</p>
+                    <a href="posts/2025/03/06/hello-world.html" class="card-link">Read Hello World</a>
                 </article>
                 <!-- More post cards will go here -->
             </div>
@@ -44,7 +49,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Adam's Notebook. All rights reserved.</p>
+            <p>&copy; 2025 Adam's Notebook. All rights reserved.</p>
         </div>
     </footer>
 
