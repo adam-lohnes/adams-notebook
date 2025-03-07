@@ -85,3 +85,12 @@ This is a personal blog called "Adam's Notebook" built with vanilla HTML, CSS, a
 - The tracking script should be placed immediately after the opening `<head>` tag
 - Analytics code should be properly commented for easy identification
 - Respect user privacy by not collecting unnecessary personal information 
+
+## Favicon
+- Use the notebook-style favicon for all pages
+- Black/dark grey notebook design with white pages and darker rule lines
+- Include SVG version for modern browsers
+- Include PNG fallbacks (32x32, 192x192, 512x512)
+- Include proper Apple touch icon
+- Include site.webmanifest for PWA support
+- Favicon links should be placed in the head section after meta tags and before stylesheets 
