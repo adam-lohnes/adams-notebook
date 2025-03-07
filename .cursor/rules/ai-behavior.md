@@ -26,6 +26,9 @@
 - Maintain the theme toggle functionality
 - Keep the sticky footer with the correct copyright year
 - Ensure all pages are responsive and work on mobile devices
+- Use relative paths for all links and resources to ensure portability
+- For post files, use relative paths with the appropriate number of "../" to navigate up to the root
+- When creating new posts, replace "ROOT_PATH" in templates with the appropriate relative path
 
 ## When Modifying CSS
 - Use the established CSS variables for colors

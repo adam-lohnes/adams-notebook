@@ -40,6 +40,13 @@ This is a personal blog called "Adam's Notebook" built with vanilla HTML, CSS, a
 - Provide a toggle button with sun/moon animation
 - Persist user preference using localStorage
 
+## Path Handling
+- Use relative paths instead of absolute paths for all links and resources
+- For post files, use relative paths with the appropriate number of "../" to navigate up to the root
+- In templates, use "ROOT_PATH" as a placeholder that will be replaced with the appropriate relative path
+- Ensure all paths work both locally and when deployed to GitHub Pages or other hosting services
+- For links between posts, use relative paths that navigate through the directory structure
+
 ## Lists
 - Lists should have custom styling with primary color bullets/numbers
 - Proper spacing and indentation for better readability
