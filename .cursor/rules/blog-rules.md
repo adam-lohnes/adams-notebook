@@ -16,7 +16,7 @@ This is a personal blog called "Adam's Notebook" built with vanilla HTML, CSS, a
 - Keep styling consistent across all pages
 
 ## Content Structure
-- Blog posts should be organized by date: `/posts/YYYY/MM/DD-title-slug.html`
+- Blog posts should be organized by date: `/posts/YYYY/MM/DD/title-slug.html`
 - Each post should use the template structure from `/templates/post-template.html`
 - Post metadata should include title, date, and description
 

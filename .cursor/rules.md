@@ -23,7 +23,7 @@ For detailed project rules, please refer to:
 - **Directory Structure**:
   - `/css`: Styling files
   - `/js`: JavaScript files
-  - `/posts`: Blog posts organized by date (YYYY/MM/DD-title-slug.html)
+  - `/posts`: Blog posts organized by date (YYYY/MM/DD/title-slug.html)
   - `/templates`: Templates for creating new posts
 
 - **Navigation**:
