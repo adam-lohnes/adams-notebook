@@ -1,0 +1,43 @@
+---
+description: Technical guidelines for blog development and maintenance
+globs: *.html, *.css, *.js
+alwaysApply: false
+---
+
+# Blog Technical Guidelines
+
+## Code Conventions
+- Use consistent indentation (2 spaces)
+- Include appropriate meta tags for SEO
+- Maintain semantic HTML structure
+- Keep JavaScript minimal and focused on functionality
+- See @templates/post-template.html for reference
+
+## Performance Considerations
+- Optimize images before adding to the site
+- Keep external dependencies to a minimum
+- Ensure fast loading times for all pages 
+- Use appropriate image formats and sizes
+
+## Analytics
+- Google Analytics tracking code (G-F89LERZZ23) should be included on all pages
+- The tracking script should be placed immediately after the opening `<head>` tag
+- Analytics code should be properly commented for easy identification
+- Respect user privacy by not collecting unnecessary personal information 
+- See @index.html for reference implementation
+
+## HTML Structure
+- Use proper HTML5 semantic elements (header, nav, main, article, section, footer)
+- Include appropriate meta tags for SEO and social sharing
+- Ensure all pages have a consistent structure
+- Use proper heading hierarchy (h1, h2, h3, etc.)
+- Include appropriate ARIA attributes for accessibility
+- See @posts/2025/03/06/hello-world.html for reference
+
+## JavaScript Usage
+- Use vanilla JavaScript without frameworks
+- Implement progressive enhancement
+- Keep scripts modular and focused
+- Place script tags at the end of the body or use defer attribute
+- Comment complex functionality
+- See @js/main.js and @js/section-links.js for examples

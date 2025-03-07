@@ -1,0 +1,56 @@
+---
+description: Guidelines for working with blog drafts
+globs: drafts/*.md
+alwaysApply: false
+---
+
+# Blog Drafts Guidelines
+
+## Structure
+- Use Markdown (`.md`) files for drafts
+- Name files with a descriptive title: `article-title-slug.md`
+- Include frontmatter at the top of each file with metadata
+- See @drafts/README.md for complete instructions
+
+## Frontmatter Template
+```yaml
+---
+title: "Article Title"
+description: "Brief description of the article"
+date: YYYY-MM-DD
+tags: [tag1, tag2, tag3]
+status: draft|in-progress|ready
+---
+```
+
+## Workflow
+1. Create a new draft in the drafts folder
+2. Develop and refine the content
+3. When ready, convert to HTML using @templates/post-template.html
+4. Move to the appropriate date folder in `/posts/YYYY/MM/DD/`
+5. Update @index.html and @posts.html with links to the new post
+
+## Publishing Checklist
+- [ ] Proofread content
+- [ ] Add appropriate citations and references
+- [ ] Include relevant images/media
+- [ ] Format code snippets properly
+- [ ] Add meta description
+- [ ] Set appropriate tags
+- [ ] Update navigation links
+
+## Content Categories
+- Software Projects & Experiments
+- Creative Projects & Experiments
+- AI Thoughts & Analysis
+- Books & Learning
+- Productivity & Personal Growth
+- Miscellaneous
+
+## Examples
+- @drafts/ai-tools-changing-workflow.md
+- @drafts/building-vanilla-js-spa.md
+- @drafts/digital-minimalism.md
+- @drafts/local-ai-tools.md
+- @drafts/personal-project-deep-dive.md
+- @drafts/book-review-thinking-fast-slow.md

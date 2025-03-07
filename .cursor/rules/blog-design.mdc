@@ -1,0 +1,52 @@
+---
+description: Guidelines for blog design and styling
+globs: *.html, *.css
+alwaysApply: false
+---
+
+# Blog Design Guidelines
+
+## Styling Guidelines
+- Use the existing color scheme defined in CSS variables in @css/styles.css
+- Support both light and dark themes
+- Maintain responsive design for all screen sizes
+- Keep styling consistent across all pages
+
+## Navigation
+- The site header ("Adam's Notebook") serves as the home link
+- Navigation includes "All Posts" and "About" (which links to the Hello World post)
+- The theme toggle button should always be present in the header
+- See @index.html for reference implementation
+
+## Post Cards
+- Post cards should be fully clickable
+- Cards should have a consistent design with title, date, description, and link
+- Cards should have hover effects for better user interaction
+- See @index.html for examples of post cards
+
+## Footer
+- Footer should be sticky to the bottom of the viewport when content is shorter
+- Copyright year should be 2025
+- Footer should be consistent across all pages
+- See @templates/post-template.html for reference implementation
+
+## Theme Toggle
+- Support system preference detection for dark/light mode
+- Provide a toggle button with sun/moon animation
+- Persist user preference using localStorage
+- Implementation in @js/main.js
+
+## Lists
+- Lists should have custom styling with primary color bullets/numbers
+- Proper spacing and indentation for better readability
+- Consistent styling for both ordered and unordered lists
+- See @css/styles.css for implementation
+
+## Favicon
+- Use the notebook-style favicon for all pages
+- Black/dark grey notebook design with white pages and darker rule lines
+- Include SVG version for modern browsers (@favicon.svg)
+- Include PNG fallbacks (32x32, 192x192, 512x512) in @favicon/ directory
+- Include proper Apple touch icon
+- Include @site.webmanifest for PWA support
+- Favicon links should be placed in the head section after meta tags and before stylesheets

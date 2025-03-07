@@ -1,0 +1,32 @@
+---
+description: Guidelines for blog structure and organization
+globs: *.html, *.md
+alwaysApply: false
+---
+
+# Blog Structure Guidelines
+
+## Project Overview
+This is a personal blog called "Adam's Notebook" built with vanilla HTML, CSS, and JavaScript. The blog focuses on software projects, AI thoughts, and miscellaneous life experiences.
+
+## Directory Structure
+- `/css`: Contains styling files (see @css/styles.css)
+- `/js`: Contains JavaScript files (see @js/main.js)
+- `/posts`: Contains blog posts organized by date (YYYY/MM/DD/title-slug.html)
+- `/templates`: Contains templates for creating new posts (see @templates/post-template.html)
+- `/drafts`: Contains draft posts in Markdown format (see @drafts/README.md)
+
+## Content Structure
+- Blog posts should be organized by date: `/posts/YYYY/MM/DD/title-slug.html`
+- Each post should use the template structure from @templates/post-template.html
+- Post metadata should include title, date, and description
+- For examples, see:
+  - @posts/2025/03/06/hello-world.html
+  - @posts/2025/03/07/ethical-considerations-ai-development.html
+
+## Path Handling
+- Use relative paths instead of absolute paths for all links and resources
+- For post files, use relative paths with the appropriate number of "../" to navigate up to the root
+- In templates, use "ROOT_PATH" as a placeholder that will be replaced with the appropriate relative path
+- Ensure all paths work both locally and when deployed to GitHub Pages or other hosting services
+- For links between posts, use relative paths that navigate through the directory structure

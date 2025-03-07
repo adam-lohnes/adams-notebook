@@ -1,14 +1,12 @@
+---
+description: Main guidelines for Adam's Notebook blog project
+globs: *
+alwaysApply: true
+---
+
 # Adam's Notebook Blog Project
 
 This is a personal blog built with vanilla HTML, CSS, and JavaScript. The blog focuses on software projects, AI thoughts, and miscellaneous life experiences.
-
-## Project Rules
-
-For detailed project rules, please refer to:
-- [Blog Project Rules](./rules/blog-rules.md)
-- [AI Behavior Rules](./rules/ai-behavior.md)
-- [HTML Rules](.rules/html-rules.md)
-- [CSS Rules](.rules/css-rules.md)
 
 ## Key Principles
 
@@ -18,6 +16,21 @@ For detailed project rules, please refer to:
 4. **Responsiveness**: Ensure the site works well on all device sizes
 5. **Accessibility**: Maintain good accessibility practices throughout the site
 
+## Project Rules
+
+For detailed project rules, please refer to:
+- @blog-structure.mdc - Guidelines for blog structure and organization
+- @blog-design.mdc - Guidelines for blog design and styling
+- @blog-content.mdc - Guidelines for blog content creation and management
+- @blog-technical.mdc - Technical guidelines for blog development
+- @blog-drafts.mdc - Guidelines for working with blog drafts
+
+## Important Templates
+
+- @templates/post-template.html - Template for creating new blog posts
+- @drafts/README.md - Instructions for working with drafts
+- @drafts/article-ideas.md - List of article ideas and content planning
+
 ## Quick Reference
 
 - **Directory Structure**:
@@ -25,6 +38,7 @@ For detailed project rules, please refer to:
   - `/js`: JavaScript files
   - `/posts`: Blog posts organized by date (YYYY/MM/DD/title-slug.html)
   - `/templates`: Templates for creating new posts
+  - `/drafts`: Draft posts in Markdown format
 
 - **Navigation**:
   - Site header links to home
@@ -39,4 +53,5 @@ For detailed project rules, please refer to:
 - **Post Creation**:
   - Use templates in `/templates` directory
   - Follow date-based structure
-  - Update index.html and posts.html with links to new posts 
+  - Update index.html and posts.html with links to new posts
+  
