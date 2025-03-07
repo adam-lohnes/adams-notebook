@@ -79,3 +79,9 @@ This is a personal blog called "Adam's Notebook" built with vanilla HTML, CSS, a
 - Optimize images before adding to the site
 - Keep external dependencies to a minimum
 - Ensure fast loading times for all pages 
+
+## Analytics
+- Google Analytics tracking code (G-F89LERZZ23) should be included on all pages
+- The tracking script should be placed immediately after the opening `<head>` tag
+- Analytics code should be properly commented for easy identification
+- Respect user privacy by not collecting unnecessary personal information 
