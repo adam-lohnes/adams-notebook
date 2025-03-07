@@ -12,6 +12,15 @@
 - Ensure new posts fit within the three main categories: software projects, AI thoughts, and miscellaneous experiences
 - Use proper heading hierarchy (h1 for title, h2 for main sections, h3 for subsections)
 
+## Citations and References
+- For academic-style articles, include proper citations using the established citation system
+- Format citations as superscript links with the class "citation"
+- Citations should link to the references section using anchor links (e.g., `<a href="#reference-id" class="citation">(Author, Year)</a>`)
+- References should be listed in a section with the ID "references"
+- Each reference item should have a unique ID for linking
+- Citations should use the primary blue color (var(--primary-color)) to stand out from regular text
+- Include proper links to external sources in the references section when available
+
 ## When Modifying HTML
 - Preserve the navigation structure with "All Posts" and "About" links
 - Maintain the theme toggle functionality

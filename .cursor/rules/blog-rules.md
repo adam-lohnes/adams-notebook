@@ -45,6 +45,17 @@ This is a personal blog called "Adam's Notebook" built with vanilla HTML, CSS, a
 - Proper spacing and indentation for better readability
 - Consistent styling for both ordered and unordered lists
 
+## Citations and References
+- Academic-style articles should include proper citations
+- Citations should be formatted as superscript links with the class "citation"
+- Citations should link to the references section using anchor links
+- The references section should have the ID "references"
+- Each reference item should have a unique ID for linking
+- Citations should use the primary blue color to stand out
+- References should include proper links to external sources when available
+- Citation format should follow the pattern: (Author, Year)
+- References should be listed in a consistent format with proper spacing
+
 ## Creating New Posts
 1. Use the template in `/templates/post-template.md` for drafting
 2. Convert to HTML using the structure in `/templates/post-template.html`
