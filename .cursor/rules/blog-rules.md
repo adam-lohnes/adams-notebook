@@ -64,10 +64,19 @@ This is a personal blog called "Adam's Notebook" built with vanilla HTML, CSS, a
 - References should be listed in a consistent format with proper spacing
 
 ## Creating New Posts
-1. Use the template in `/templates/post-template.md` for drafting
-2. Convert to HTML using the structure in `/templates/post-template.html`
-3. Place in the correct date-based directory: `/posts/YYYY/MM/DD/`
-4. Update index.html and posts.html with links to the new post
+1. Start by creating a draft in the `/drafts` folder using Markdown format
+2. Use the frontmatter template from the drafts README
+3. Develop and refine the content in Markdown
+4. When ready, convert to HTML using the structure in `/templates/post-template.html`
+5. Place in the correct date-based directory: `/posts/YYYY/MM/DD/`
+6. Update index.html and posts.html with links to the new post
+
+## Content Planning
+- Maintain a list of article ideas in `/drafts/article-ideas.md`
+- Organize draft posts with appropriate frontmatter including status
+- Use the drafts folder for developing content before publishing
+- Follow the publishing checklist in the drafts README
+- Aim for a mix of technical, AI-related, and personal content
 
 ## Code Conventions
 - Use consistent indentation (2 spaces)
