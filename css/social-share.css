@@ -1,0 +1,155 @@
+/* Social Share Component Styles */
+
+.social-share {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    gap: 0.75rem;
+}
+
+.social-share-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 0.5rem;
+}
+
+.dark-theme .social-share-label {
+    color: #aaa;
+}
+
+.social-share-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-share-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: none;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #555;
+    padding: 0;
+    position: relative;
+}
+
+.social-share-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.social-share-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Hover tooltip styles */
+.social-share-button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.social-share-button:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dark-theme .social-share-button::after {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Platform-specific colors on hover */
+.share-x:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: white;
+}
+
+.share-facebook:hover {
+    background-color: #4267B2;
+    border-color: #4267B2;
+    color: white;
+}
+
+.share-linkedin:hover {
+    background-color: #0077B5;
+    border-color: #0077B5;
+    color: white;
+}
+
+.share-reddit:hover {
+    background-color: #FF4500;
+    border-color: #FF4500;
+    color: white;
+}
+
+.share-email:hover {
+    background-color: #555;
+    border-color: #555;
+    color: white;
+}
+
+.share-copy:hover {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+/* Dark mode adjustments */
+.dark-theme .social-share-button {
+    border-color: #444;
+    color: #aaa;
+}
+
+/* Copy confirmation tooltip */
+.share-tooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    animation: fadeInOut 2s ease;
+    pointer-events: none;
+    z-index: 100;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dark-theme .share-tooltip {
+    background-color: #ddd;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-share {
+        flex-wrap: wrap;
+    }
+    
+    .social-share-label {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+} 
