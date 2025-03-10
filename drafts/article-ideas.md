@@ -92,4 +92,5 @@ Based on the "Hello World" post, these articles were mentioned as coming soon:
 | Book Review: Thinking, Fast and Slow | Draft | April 15, 2025 |
 | Digital Minimalism | Draft | May 1, 2025 |
 | Vibe Coding a Social Browser Games Site | Draft | May 15, 2025 |
-| Local AI Tools for Fun and Privacy | Draft | June 1, 2025 | 
+| Local AI Tools for Fun and Privacy | Draft | June 1, 2025 |
+| Core Skills in the AI Era | Published | March 10, 2025 | 
