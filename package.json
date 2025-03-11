@@ -1,0 +1,25 @@
+{
+  "name": "adams-notebook",
+  "version": "1.0.0",
+  "description": "Adam's personal blog built with Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site",
+    "serve": "eleventy --serve"
+  },
+  "keywords": [
+    "blog",
+    "eleventy",
+    "11ty"
+  ],
+  "author": "Adam Lohnes",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "luxon": "^3.4.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.7"
+  }
+}

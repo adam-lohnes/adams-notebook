@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F89LERZZ23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F89LERZZ23');
+    </script>
+    <!-- End Google Analytics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} | {% endif %}Adam's Notebook</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}Adam's personal blog about technology, programming, and more.{% endif %}">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="{% if title %}{{ title }}{% else %}Adam's Notebook{% endif %}">
+    <meta property="og:description" content="{% if description %}{{ description }}{% else %}Adam's personal blog about technology, programming, and more.{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url }}">
+    <meta property="og:image" content="{% if image %}{{ image }}{% else %}{{ '/assets/images/default-og.jpg' }}{% endif %}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}Adam's Notebook{% endif %}">
+    <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Adam's personal blog about technology, programming, and more.{% endif %}">
+    <meta name="twitter:image" content="{% if image %}{{ image }}{% else %}{{ '/assets/images/default-og.jpg' }}{% endif %}">
+    {% block head %}{% endblock %}
+</head>
+<body class="{% if bodyClass %}{{ bodyClass }}{% endif %}">
+    {% include "header.njk" %}
+    
+    <main>
+        {{ content | safe }}
+    </main>
+    
+    {% include "footer.njk" %}
+    
+    <!-- Scripts -->
+    <script src="/assets/js/theme-toggle.js"></script>
+    <script src="/assets/js/main.js"></script>
+    {% if page.url.includes('/posts/') %}
+    <script src="/js/section-links.js"></script>
+    <script src="/js/social-share.js"></script>
+    {% endif %}
+    {% block scripts %}{% endblock %}
+</body>
+</html> 
