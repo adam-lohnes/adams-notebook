@@ -53,6 +53,11 @@ export default function Header() {
               </Link>
             </li>
             <li>
+              <Link href="/tags" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                Tags
+              </Link>
+            </li>
+            <li>
               <Link href="/posts/hello-world" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                 About
               </Link>
