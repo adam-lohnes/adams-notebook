@@ -48,9 +48,12 @@ jobs:
           # Ensure drafts directory exists with proper structure
           mkdir -p drafts/in-progress drafts/published drafts/ideas
           
-          # Copy any existing drafts from the repo
+          # No need to copy README.md to itself - it's already in the right place
+          # Just check if it exists for debugging
           if [ -f "drafts/README.md" ]; then
-            cp drafts/README.md drafts/
+            echo "drafts/README.md exists"
+          else
+            echo "drafts/README.md does not exist"
           fi
           
           # Debug prisma directory
