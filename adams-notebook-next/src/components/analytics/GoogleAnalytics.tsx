@@ -5,7 +5,7 @@ import Script from 'next/script';
 // Google Analytics ID from the original blog
 const GA_MEASUREMENT_ID = 'G-F89LERZZ23';
 
-export default function GoogleAnalytics() {
+export function GoogleAnalytics() {
   return (
     <>
       <Script

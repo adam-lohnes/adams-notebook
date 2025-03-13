@@ -27,6 +27,12 @@ const nextConfig = {
         destination: '/posts',
         permanent: true,
       },
+      // Redirect from /about to Hello World post
+      {
+        source: '/about',
+        destination: '/posts/hello-world',
+        permanent: true,
+      },
     ];
   },
 };
