@@ -1,8 +1,16 @@
 ---
-title: "Vibe Coding a Social Browser Games Site"
-description: "How I created a fun, social gaming platform with a focus on aesthetics and user experience rather than just functionality."
-date: 2025-05-15
-tags: [vibe-coding, web-development, games, social, design, javascript]
+title: Vibe Coding a Social Browser Games Site
+description: >-
+  How I created a fun, social gaming platform with a focus on aesthetics and
+  user experience rather than just functionality.
+date: 2025-05-15T00:00:00.000Z
+tags:
+  - vibe-coding
+  - web-development
+  - games
+  - social
+  - design
+  - javascript
 status: draft
 ---
 

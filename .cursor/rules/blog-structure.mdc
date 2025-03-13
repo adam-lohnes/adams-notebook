@@ -3,30 +3,35 @@ description: Guidelines for blog structure and organization
 globs: *.html, *.md
 alwaysApply: false
 ---
-
 # Blog Structure Guidelines
 
 ## Project Overview
-This is a personal blog called "Adam's Notebook" built with vanilla HTML, CSS, and JavaScript. The blog focuses on software projects, AI thoughts, and miscellaneous life experiences.
+This is a personal blog called "Adam's Notebook" built with Next.js, React, TypeScript, and Tailwind CSS. The blog focuses on software projects, AI thoughts, and miscellaneous life experiences.
 
 ## Directory Structure
-- `/css`: Contains styling files (see @css/styles.css)
-- `/js`: Contains JavaScript files (see @js/main.js)
-- `/posts`: Contains blog posts organized by date (YYYY/MM/DD/title-slug.html)
-- `/templates`: Contains templates for creating new posts (see @templates/post-template.html)
-- `/drafts`: Contains draft posts in Markdown format (see @drafts/README.md)
+- `/src/app`: Contains Next.js App Router pages and layouts
+- `/src/components`: Contains React components organized by category
+- `/src/lib`: Contains utility functions and shared code
+- `/prisma`: Contains database schema and migrations
+- `/public`: Contains static assets like images and favicons
+- `/drafts`: Contains draft posts in Markdown format
 
 ## Content Structure
-- Blog posts should be organized by date: `/posts/YYYY/MM/DD/title-slug.html`
-- Each post should use the template structure from @templates/post-template.html
-- Post metadata should include title, date, and description
-- For examples, see:
-  - @posts/2025/03/06/hello-world.html
-  - @posts/2025/03/07/ethical-considerations-ai-development.html
+- Blog posts are stored in the database and accessed via the App Router
+- Posts are accessed via the `/posts/[slug]` route
+- Each post has metadata including title, date, description, and tags
+- The database schema includes models for Posts, Drafts, and Tags
+
+## Routing Structure
+- Home page: `/` (src/app/page.tsx)
+- Posts index: `/posts` (src/app/posts/page.tsx)
+- Individual post: `/posts/[slug]` (src/app/posts/[slug]/page.tsx)
+- Tags page: `/tags` (src/app/tags/page.tsx)
+- Tag filter: `/tags/[tag]` (src/app/tags/[tag]/page.tsx)
+- About page: `/about` (src/app/about/page.tsx)
 
 ## Path Handling
-- Use relative paths instead of absolute paths for all links and resources
-- For post files, use relative paths with the appropriate number of "../" to navigate up to the root
-- In templates, use "ROOT_PATH" as a placeholder that will be replaced with the appropriate relative path
-- Ensure all paths work both locally and when deployed to GitHub Pages or other hosting services
-- For links between posts, use relative paths that navigate through the directory structure
+- Use Next.js Link component for client-side navigation
+- Static assets should be placed in the `/public` directory
+- Images and other media should use the Next.js Image component when possible
+- API routes are available under `/api` for dynamic data fetching

@@ -1,8 +1,15 @@
 ---
-title: "Building a Personal Knowledge Management System: A Project Deep Dive"
-description: "A comprehensive look at how I built a personal knowledge management system that combines note-taking, spaced repetition, and AI-powered insights."
-date: 2025-03-20
-tags: [projects, knowledge-management, productivity, software-development, ai]
+title: 'Building a Personal Knowledge Management System: A Project Deep Dive'
+description: >-
+  A comprehensive look at how I built a personal knowledge management system
+  that combines note-taking, spaced repetition, and AI-powered insights.
+date: 2025-03-20T00:00:00.000Z
+tags:
+  - projects
+  - knowledge-management
+  - productivity
+  - software-development
+  - ai
 status: draft
 ---
 

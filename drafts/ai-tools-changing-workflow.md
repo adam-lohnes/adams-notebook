@@ -1,8 +1,15 @@
 ---
-title: "How AI Tools Are Changing My Workflow and Creative Process"
-description: "A reflection on the integration of AI tools into my daily work and how they're reshaping my approach to creativity and problem-solving."
-date: 2025-04-01
-tags: [ai, productivity, creativity, tools, workflow]
+title: How AI Tools Are Changing My Workflow and Creative Process
+description: >-
+  A reflection on the integration of AI tools into my daily work and how they're
+  reshaping my approach to creativity and problem-solving.
+date: 2025-04-01T00:00:00.000Z
+tags:
+  - ai
+  - productivity
+  - creativity
+  - tools
+  - workflow
 status: draft
 ---
 

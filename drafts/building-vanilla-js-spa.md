@@ -1,8 +1,15 @@
 ---
-title: "Building a Vanilla JS SPA: Lessons from Creating This Blog"
-description: "A detailed look at how I built this blog using vanilla HTML, CSS, and JavaScript, and why I chose to avoid frameworks for this project."
-date: 2025-03-25
-tags: [javascript, web-development, spa, vanilla-js, performance]
+title: 'Building a Vanilla JS SPA: Lessons from Creating This Blog'
+description: >-
+  A detailed look at how I built this blog using vanilla HTML, CSS, and
+  JavaScript, and why I chose to avoid frameworks for this project.
+date: 2025-03-25T00:00:00.000Z
+tags:
+  - javascript
+  - web-development
+  - spa
+  - vanilla-js
+  - performance
 status: draft
 ---
 

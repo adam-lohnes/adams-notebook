@@ -1,8 +1,16 @@
 ---
-title: "Book Review: Thinking, Fast and Slow by Daniel Kahneman"
-description: "A deep dive into Daniel Kahneman's groundbreaking work on cognitive biases and decision-making, with reflections on its implications for software development and AI."
-date: 2025-04-15
-tags: [books, psychology, decision-making, cognitive-biases, ai]
+title: 'Book Review: Thinking, Fast and Slow by Daniel Kahneman'
+description: >-
+  A deep dive into Daniel Kahneman's groundbreaking work on cognitive biases and
+  decision-making, with reflections on its implications for software development
+  and AI.
+date: 2025-04-15T00:00:00.000Z
+tags:
+  - books
+  - psychology
+  - decision-making
+  - cognitive-biases
+  - ai
 status: draft
 ---
 
