@@ -17,8 +17,6 @@ export default function SocialShare({ url, title, className = '' }: SocialShareP
   // Encode for sharing
   const encodedUrl = encodeURIComponent(fullUrl);
   const encodedTitle = encodeURIComponent(title);
-
-  console.log("😜", encodedUrl);
   
   // Share URLs
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
