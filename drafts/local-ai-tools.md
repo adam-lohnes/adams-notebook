@@ -1,8 +1,16 @@
 ---
-title: "Local AI Tools for Fun and Privacy"
-description: "How to build and use AI tools that run entirely on your own hardware, preserving privacy while still enjoying the benefits of AI."
-date: 2025-06-01
-tags: [ai, privacy, local-first, llama, stable-diffusion, development]
+title: Local AI Tools for Fun and Privacy
+description: >-
+  How to build and use AI tools that run entirely on your own hardware,
+  preserving privacy while still enjoying the benefits of AI.
+date: 2025-06-01T00:00:00.000Z
+tags:
+  - ai
+  - privacy
+  - local-first
+  - llama
+  - stable-diffusion
+  - development
 status: draft
 ---
 

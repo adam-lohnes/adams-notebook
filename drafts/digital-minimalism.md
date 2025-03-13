@@ -1,8 +1,15 @@
 ---
-title: "Digital Minimalism: Simplifying My Online Presence and Tools"
-description: "My journey toward a more intentional digital life, reducing digital clutter, and focusing on tools that provide genuine value."
-date: 2025-05-01
-tags: [productivity, digital-minimalism, focus, tools, intentionality]
+title: 'Digital Minimalism: Simplifying My Online Presence and Tools'
+description: >-
+  My journey toward a more intentional digital life, reducing digital clutter,
+  and focusing on tools that provide genuine value.
+date: 2025-05-01T00:00:00.000Z
+tags:
+  - productivity
+  - digital-minimalism
+  - focus
+  - tools
+  - intentionality
 status: draft
 ---
 

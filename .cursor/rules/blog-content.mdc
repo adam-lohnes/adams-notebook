@@ -3,38 +3,63 @@ description: Guidelines for blog content creation and management
 globs: *.html, *.md
 alwaysApply: false
 ---
+---
+description: Guidelines for blog content creation and management
+globs: *.html, *.md
+alwaysApply: false
+---
 
 # Blog Content Guidelines
 
 ## Citations and References
 - Academic-style articles should include proper citations
-- Citations should be formatted as superscript links with the class "citation"
-- Citations should link to the references section using anchor links
-- The references section should have the ID "references"
-- Each reference item should have a unique ID for linking
-- Citations should use the primary blue color to stand out
-- References should include proper links to external sources when available
-- Citation format should follow the pattern: (Author, Year)
+- Citations should be formatted as superscript links
+- Use the `<cite>` element for citations when appropriate
 - References should be listed in a consistent format with proper spacing
-- For an example, see @posts/2025/03/07/ethical-considerations-ai-development.html
+- Citation format should follow the pattern: (Author, Year)
+- References should include proper links to external sources when available
 
 ## Creating New Posts
 1. Start by creating a draft in the `/drafts` folder using Markdown format
-2. Use the frontmatter template from @drafts/README.md
+2. Use the frontmatter template from `drafts/README.md`
 3. Develop and refine the content in Markdown
-4. When ready, convert to HTML using the structure in @templates/post-template.html
-5. Place in the correct date-based directory: `/posts/YYYY/MM/DD/`
-6. Update @index.html and @posts.html with links to the new post
+4. When ready, import the draft into the database using `npm run import:drafts`
+5. The draft will be automatically post-processed and moved to the appropriate subdirectory
+6. Update the status in the database to publish the post
+
+## Draft Organization
+- Drafts are organized into subdirectories based on their status:
+  - `/drafts`: New drafts and those in initial development
+  - `/drafts/in-progress`: Drafts that are actively being worked on
+  - `/drafts/published`: Drafts that have been published as posts
+  - `/drafts/ideas`: Article ideas and planning documents
+- The post-processing script automatically moves drafts to the appropriate directory
+- Use `npm run post-process:drafts` to manually trigger post-processing
 
 ## Content Planning
-- Maintain a list of article ideas in @drafts/article-ideas.md
+- Maintain a list of article ideas in `drafts/ideas/article-ideas.md`
 - Organize draft posts with appropriate frontmatter including status
 - Use the drafts folder for developing content before publishing
-- Follow the publishing checklist in @drafts/README.md
+- Follow the publishing checklist in `drafts/README.md`
 - Aim for a mix of technical, AI-related, and personal content
 - For draft examples, see:
-  - @drafts/ai-tools-changing-workflow.md
-  - @drafts/digital-minimalism.md
+  - `drafts/ai-tools-changing-workflow.md`
+  - `drafts/digital-minimalism.md`
+
+## Content Categories
+- Software Projects & Experiments
+- Creative Projects & Experiments
+- AI Thoughts & Analysis
+- Books & Learning
+- Productivity & Personal Growth
+- Miscellaneous
+
+## Markdown Formatting
+- Use proper Markdown syntax for headings, lists, and code blocks
+- Code blocks should specify the language for syntax highlighting
+- Use front matter for metadata (title, description, date, tags)
+- Images should be placed in the public directory and referenced with relative paths
+- Use proper heading hierarchy (# for title, ## for sections, etc.)
 
 ## Drafts Format
 ```yaml

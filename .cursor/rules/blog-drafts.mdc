@@ -3,21 +3,28 @@ description: Guidelines for working with blog drafts
 globs: drafts/*.md
 alwaysApply: false
 ---
-
 # Blog Drafts Guidelines
+
+## Directory Structure
+- `/drafts`: Root directory for all draft content
+  - `/drafts/in-progress`: Drafts that are actively being worked on
+  - `/drafts/published`: Drafts that have been published as posts
+  - `/drafts/ideas`: Article ideas and planning documents
+- New drafts should be created in the root `/drafts` directory
+- Drafts will be automatically moved to the appropriate subdirectory during post-processing
 
 ## Structure
 - Use Markdown (`.md`) files for drafts
 - Name files with a descriptive title: `article-title-slug.md`
 - Include frontmatter at the top of each file with metadata
-- See @drafts/README.md for complete instructions
+- See `drafts/README.md` for complete instructions
 
 ## Frontmatter Template
 ```yaml
 ---
 title: "Article Title"
 description: "Brief description of the article"
-date: YYYY-MM-DD
+date: YYYY-MM-DD (always use today's date - check it in the terminal, if need be)
 tags: [tag1, tag2, tag3]
 status: draft|in-progress|ready
 ---
@@ -26,9 +33,25 @@ status: draft|in-progress|ready
 ## Workflow
 1. Create a new draft in the drafts folder
 2. Develop and refine the content
-3. When ready, convert to HTML using @templates/post-template.html
-4. Move to the appropriate date folder in `/posts/YYYY/MM/DD/`
-5. Update @index.html and @posts.html with links to the new post
+3. When ready, import the draft into the database using `npm run import:drafts`
+4. The draft will be automatically post-processed and moved to the appropriate subdirectory
+5. Update the status in the database to publish the post
+
+## Post-Processing
+- After importing drafts, the post-processing script will:
+  - Update the frontmatter in each draft file to match the database
+  - Move drafts to the appropriate subdirectory based on status:
+    - `draft` → stays in root `/drafts`
+    - `in-progress` → moves to `/drafts/in-progress`
+    - `ready` or `published` → moves to `/drafts/published`
+  - Move article ideas to the `/drafts/ideas` directory
+
+## Database Integration
+- Drafts are stored in the `Draft` table in the database
+- Use `npm run db:studio` to manage drafts in the database
+- The database schema includes fields for title, description, content, date, tags, and status
+- Drafts can be converted to posts by changing their status to "ready"
+- The import script handles parsing frontmatter and converting Markdown to HTML
 
 ## Publishing Checklist
 - [ ] Proofread content
@@ -37,7 +60,7 @@ status: draft|in-progress|ready
 - [ ] Format code snippets properly
 - [ ] Add meta description
 - [ ] Set appropriate tags
-- [ ] Update navigation links
+- [ ] Update status to "ready"
 
 ## Content Categories
 - Software Projects & Experiments
@@ -48,9 +71,9 @@ status: draft|in-progress|ready
 - Miscellaneous
 
 ## Examples
-- @drafts/ai-tools-changing-workflow.md
-- @drafts/building-vanilla-js-spa.md
-- @drafts/digital-minimalism.md
-- @drafts/local-ai-tools.md
-- @drafts/personal-project-deep-dive.md
-- @drafts/book-review-thinking-fast-slow.md
+- `drafts/ai-tools-changing-workflow.md`
+- `drafts/building-vanilla-js-spa.md`
+- `drafts/digital-minimalism.md`
+- `drafts/local-ai-tools.md`
+- `drafts/personal-project-deep-dive.md`
+- `drafts/book-review-thinking-fast-slow.md`

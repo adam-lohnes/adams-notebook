@@ -3,41 +3,47 @@ description: Technical guidelines for blog development and maintenance
 globs: *.html, *.css, *.js
 alwaysApply: false
 ---
-
 # Blog Technical Guidelines
 
 ## Code Conventions
-- Use consistent indentation (2 spaces)
-- Include appropriate meta tags for SEO
-- Maintain semantic HTML structure
-- Keep JavaScript minimal and focused on functionality
-- See @templates/post-template.html for reference
+- Use TypeScript for type safety
+- Follow Next.js App Router conventions
+- Use Tailwind CSS for styling
+- Maintain consistent component structure
+- Use ESLint and Prettier for code formatting
+- Follow React best practices for component composition
+
+## Database and Content Management
+- Use Prisma ORM for database interactions
+- SQLite database for local development
+- Models include Posts, Drafts, and Tags
+- Use Prisma Studio for database management: `npm run db:studio`
+- Database migrations should be committed to version control
 
 ## Performance Considerations
-- Optimize images before adding to the site
+- Use Next.js Image component for optimized images
+- Implement proper code splitting with dynamic imports when needed
+- Optimize for Core Web Vitals
 - Keep external dependencies to a minimum
-- Ensure fast loading times for all pages 
-- Use appropriate image formats and sizes
+- Use static generation for content pages when possible
 
 ## Analytics
-- Google Analytics tracking code (G-F89LERZZ23) should be included on all pages
-- The tracking script should be placed immediately after the opening `<head>` tag
-- Analytics code should be properly commented for easy identification
-- Respect user privacy by not collecting unnecessary personal information 
-- See @index.html for reference implementation
+- Google Analytics tracking is implemented in the GoogleAnalytics component
+- The component is included in the root layout.tsx file
+- Analytics respects user privacy settings
+- See `src/components/analytics/GoogleAnalytics.tsx` for implementation
 
-## HTML Structure
-- Use proper HTML5 semantic elements (header, nav, main, article, section, footer)
-- Include appropriate meta tags for SEO and social sharing
-- Ensure all pages have a consistent structure
-- Use proper heading hierarchy (h1, h2, h3, etc.)
-- Include appropriate ARIA attributes for accessibility
-- See @posts/2025/03/06/hello-world.html for reference
+## Component Structure
+- Use functional components with TypeScript interfaces
+- Organize components by category in the components directory
+- UI components should be in `src/components/ui`
+- Layout components should be in `src/components/layout`
+- Use proper prop typing for all components
+- Implement responsive design using Tailwind breakpoints
 
-## JavaScript Usage
-- Use vanilla JavaScript without frameworks
-- Implement progressive enhancement
-- Keep scripts modular and focused
-- Place script tags at the end of the body or use defer attribute
-- Comment complex functionality
-- See @js/main.js and @js/section-links.js for examples
+## Next.js Configuration
+- Static export is configured in next.config.ts
+- Redirects are configured for backward compatibility
+- Tailwind CSS is configured in tailwind.config.js
+- Environment variables are managed in .env file
+- TypeScript configuration is in tsconfig.json
