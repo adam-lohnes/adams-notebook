@@ -42,7 +42,7 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
   
-  const postUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://adamlohnes.com'}/posts/${post.slug}`;
+  const postUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://adamsnotebook.com'}/posts/${post.slug}`;
   
   return (
     <div className="max-w-3xl mx-auto">
