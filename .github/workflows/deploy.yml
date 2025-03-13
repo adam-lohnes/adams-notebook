@@ -72,6 +72,22 @@ jobs:
           ls -la prisma/
           echo "Prisma migrations after:"
           ls -la prisma/migrations/ || echo "No migrations directory"
+          
+          # Debug TypeScript configuration
+          echo "TypeScript configuration:"
+          cat tsconfig.json || echo "No tsconfig.json found"
+          echo "TypeScript scripts configuration:"
+          cat tsconfig.scripts.json || echo "No tsconfig.scripts.json found"
+        
+      - name: Compile TypeScript scripts
+        run: |
+          # Compile TypeScript scripts to JavaScript
+          echo "Compiling TypeScript scripts..."
+          npx tsc -p tsconfig.scripts.json
+          
+          # Debug compiled scripts
+          echo "Compiled scripts:"
+          ls -la dist/scripts/ || echo "No compiled scripts found"
         
       - name: Import content
         run: |
@@ -80,10 +96,10 @@ jobs:
           npx prisma migrate deploy
           
           echo "Importing posts..."
-          npx ts-node --transpile-only src/scripts/import-posts.ts
+          node --experimental-specifier-resolution=node dist/scripts/import-posts.js
           
           echo "Importing drafts..."
-          npx ts-node --transpile-only src/scripts/import-drafts.ts
+          node --experimental-specifier-resolution=node dist/scripts/import-drafts.js
           
           echo "Database content after import:"
           npx prisma studio --browser none || echo "Could not start Prisma Studio"
