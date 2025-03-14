@@ -20,6 +20,7 @@ jobs:
     env:
       DATABASE_URL: "file:./prisma/dev.db"
       DEBUG: "prisma:*"
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -103,6 +104,7 @@ jobs:
           ls -la dist/scripts/
         
       - name: Import content
+        timeout-minutes: 2
         run: |
           # Create SQLite database and import content
           echo "Running Prisma migrations..."
@@ -114,10 +116,11 @@ jobs:
           echo "Importing drafts..."
           node dist/scripts/import-drafts.js
           
-          echo "Database content after import:"
-          npx prisma studio --browser none || echo "Could not start Prisma Studio"
+          # Skip Prisma Studio as it seems to be hanging
+          echo "Skipping Prisma Studio to avoid hanging"
           
       - name: Build
+        timeout-minutes: 5
         run: npm run build
         
       - name: Setup Pages
