@@ -32,6 +32,23 @@ export function getPublishedPosts(): MarkdownPost[] {
       const fileContent = fs.readFileSync(filePath, 'utf8');
       const { data, content } = matter(fileContent);
       
+      // Ensure date is properly parsed
+      let date: Date;
+      if (data.date) {
+        // Handle date as string (from frontmatter)
+        if (typeof data.date === 'string') {
+          // Ensure the date is properly formatted
+          const cleanDate = data.date.replace(/['"`]/g, '').trim();
+          // Force a specific time to avoid timezone issues
+          date = new Date(`${cleanDate}T12:00:00.000Z`);
+        } else {
+          // Handle date object
+          date = new Date(data.date);
+        }
+      } else {
+        date = new Date();
+      }
+      
       // Convert markdown to HTML
       const html = markdownToHtml(content);
       
@@ -42,7 +59,7 @@ export function getPublishedPosts(): MarkdownPost[] {
         slug,
         title: data.title,
         description: data.description,
-        date: new Date(data.date),
+        date,
         content,
         html,
         tags: data.tags || [],
@@ -69,6 +86,23 @@ export function getPostBySlug(slug: string): MarkdownPost | null {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
     
+    // Ensure date is properly parsed
+    let date: Date;
+    if (data.date) {
+      // Handle date as string (from frontmatter)
+      if (typeof data.date === 'string') {
+        // Ensure the date is properly formatted
+        const cleanDate = data.date.replace(/['"`]/g, '').trim();
+        // Force a specific time to avoid timezone issues
+        date = new Date(`${cleanDate}T12:00:00.000Z`);
+      } else {
+        // Handle date object
+        date = new Date(data.date);
+      }
+    } else {
+      date = new Date();
+    }
+    
     // Convert markdown to HTML
     const html = markdownToHtml(content);
     
@@ -76,7 +110,7 @@ export function getPostBySlug(slug: string): MarkdownPost | null {
       slug,
       title: data.title,
       description: data.description,
-      date: new Date(data.date),
+      date,
       content,
       html,
       tags: data.tags || [],

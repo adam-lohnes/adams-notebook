@@ -62,8 +62,8 @@ export default async function PostPage({ params }: PostPageProps) {
           <header className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{post.title}</h1>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-gray-600 dark:text-gray-400 mb-4">
-              <time dateTime={post.date.toISOString()}>
-                {post.date.toLocaleDateString('en-US', {
+              <time dateTime={new Date(post.date).toISOString()}>
+                {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',

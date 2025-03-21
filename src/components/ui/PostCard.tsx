@@ -36,7 +36,7 @@ export default function PostCard({ post }: PostCardProps) {
     <article className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
       <div className="p-6">
         <div className="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wider font-medium">
-          <time dateTime={post.date?.toISOString()}>{formattedDate}</time>
+          <time dateTime={post.date ? new Date(post.date).toISOString() : ''}>{formattedDate}</time>
         </div>
         
         <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
