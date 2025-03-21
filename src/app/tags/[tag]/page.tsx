@@ -4,11 +4,10 @@ import { notFound } from 'next/navigation';
 import PostCard from '@/components/ui/PostCard';
 import { getPostsByTag, getAllTags } from '@/lib/db/posts';
 
-interface TagPageProps {
-  params: {
-    tag: string;
-  };
-}
+type TagPageProps = {
+  params: Promise<{ tag: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
 export async function generateStaticParams() {
   const tags = await getAllTags();
@@ -19,21 +18,29 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: TagPageProps): Promise<Metadata> {
-  const tag = await Promise.resolve(params.tag);
+  const { tag } = await params;
   const decodedTag = decodeURIComponent(tag);
+  const posts = await getPostsByTag(decodedTag);
+  
+  if (!posts.length) {
+    return {
+      title: 'Tag Not Found',
+      description: 'The requested tag could not be found.',
+    };
+  }
   
   return {
-    title: `Posts tagged with "${decodedTag}" | Adam's Notebook`,
-    description: `Browse all posts tagged with ${decodedTag}`,
+    title: `${decodedTag} | Adam's Notebook`,
+    description: `Posts tagged with ${decodedTag}`,
   };
 }
 
 export default async function TagPage({ params }: TagPageProps) {
-  const tag = await Promise.resolve(params.tag);
+  const { tag } = await params;
   const decodedTag = decodeURIComponent(tag);
   const posts = await getPostsByTag(decodedTag);
   
-  if (posts.length === 0) {
+  if (!posts.length) {
     notFound();
   }
   

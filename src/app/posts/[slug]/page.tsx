@@ -5,11 +5,10 @@ import { getPostBySlug, getAllPostSlugs } from '@/lib/db/posts';
 import PostTagList from '@/components/ui/PostTagList';
 import SocialShare from '@/components/ui/SocialShare';
 
-interface PostPageProps {
-  params: {
-    slug: string;
-  };
-}
+type PostPageProps = {
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
@@ -20,7 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     return {
@@ -36,7 +36,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     notFound();
