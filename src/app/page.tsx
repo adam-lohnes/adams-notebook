@@ -1,9 +1,17 @@
 import Link from 'next/link';
 import PostCard from '@/components/ui/PostCard';
+import ViewAllPostsCard from '@/components/ui/ViewAllPostsCard';
 import { getRecentPosts } from '@/lib/db/posts';
 
 export default async function Home() {
-  const recentPosts = await getRecentPosts(5);
+  // Fetch one more post than we want to display to determine if we need the "View All" card
+  const recentPosts = await getRecentPosts(6);
+  
+  // Determine if we have enough posts to show the "View All" card
+  const displayViewAllCard = recentPosts.length >= 6;
+  
+  // If we have enough posts, only display 5 post cards plus the "View All" card
+  const postsToDisplay = displayViewAllCard ? recentPosts.slice(0, 5) : recentPosts;
   
   return (
     <div className="max-w-4xl mx-auto">
@@ -32,9 +40,13 @@ export default async function Home() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {recentPosts.map((post) => (
+          {postsToDisplay.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
+          
+          {displayViewAllCard && (
+            <ViewAllPostsCard />
+          )}
         </div>
       </section>
     </div>
