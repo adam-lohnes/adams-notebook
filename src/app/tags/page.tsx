@@ -1,19 +1,26 @@
 import Link from 'next/link';
-import { getAllTags } from '@/lib/db/posts';
+import { getAllTags } from '@/lib/markdown-loader';
 
 export const metadata = {
   title: 'All Tags | Adam\'s Notebook',
   description: 'Browse all tags on Adam\'s Notebook',
 };
 
-export default async function TagsPage() {
-  const tags = await getAllTags();
+export default function TagsPage() {
+  const tags = getAllTags();
   
   // Filter out tags with no posts and sort by post count (descending)
   const filteredTags = tags.filter(tag => tag.count > 0);
   const sortedTags = [...filteredTags].sort((a, b) => b.count - a.count);
   
-  if (sortedTags.length === 0) {
+  // Transform tags to match expected format
+  const formattedTags = sortedTags.map(tag => ({
+    id: tag.name,
+    name: tag.name,
+    count: tag.count
+  }));
+  
+  if (formattedTags.length === 0) {
     return (
       <div className="max-w-4xl mx-auto">
         <header className="mb-12">
@@ -31,12 +38,12 @@ export default async function TagsPage() {
       <header className="mb-12">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">All Tags</h1>
         <p className="text-gray-600 dark:text-gray-400">
-          Browse content by topic across {sortedTags.length} different tags
+          Browse content by topic across {formattedTags.length} different tags
         </p>
       </header>
       
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {sortedTags.map((tag) => (
+        {formattedTags.map((tag) => (
           <Link 
             key={tag.id}
             href={`/tags/${encodeURIComponent(tag.name)}`}

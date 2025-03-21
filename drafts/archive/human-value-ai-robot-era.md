@@ -1,16 +1,8 @@
 ---
-title: Redefining Human Value and Identity in the Age of AI and Robotics
-description: >-
-  An exploration of how the growing presence of AI and robots in our world is
-  reshaping our understanding of human value, purpose, and self-identity.
-date: '2025-03-14'
-tags:
-  - ai
-  - robotics
-  - philosophy
-  - identity
-  - society
-  - future
+title: "Redefining Human Value and Identity in the Age of AI and Robotics"
+description: "An exploration of how the growing presence of AI and robots in our world is reshaping our understanding of human value, purpose, and self-identity."
+date: 2024-03-21
+tags: [ai, robotics, philosophy, identity, society, future]
 status: ready
 ---
 
@@ -61,7 +53,6 @@ The answer may lie not in competing with AI on its terms, but in redefining what
 Google DeepMind's recent announcement of Gemini Robotics represents another frontier in this evolution. As described in their blog post "Gemini Robotics brings AI into the physical world," these new models enable robots to "perform a wider range of real-world tasks than ever before" with unprecedented generality, interactivity, and dexterity.
 
 The Gemini Robotics models demonstrate capabilities that were once considered uniquely human:
-
 - Adapting to novel situations and solving tasks they've never seen before
 - Understanding and responding to conversational language
 - Performing complex, multi-step tasks requiring precise manipulation
@@ -179,9 +170,9 @@ The future belongs not to those who try to outcompete AI at its strengths, but t
 
 ## References
 
-1. Forward Future AI. (2025). "[The Value of a Ph.D. in the Age of AI](https://www.forwardfuture.ai/p/the-value-of-a-ph-d-in-the-age-of-ai)."
-2. Google DeepMind. (2025). "[Gemini Robotics brings AI into the physical world](https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/)."
-3. Nussbaum, M. C. (2011). "[Creating Capabilities: The Human Development Approach](https://www.hup.harvard.edu/catalog.php?isbn=9780674072350)." Harvard University Press.
-4. Tegmark, M. (2017). "[Life 3.0: Being Human in the Age of Artificial Intelligence](https://www.penguinrandomhouse.com/books/530584/life-30-by-max-tegmark/)." Knopf.
-5. Harari, Y. N. (2018). "[21 Lessons for the 21st Century](https://www.ynharari.com/book/21-lessons-book/)." Spiegel & Grau.
-6. Oxford Economics. (2023). "[How Robots Change the World: The Impact of Automation on Employment, Productivity, and Economic Growth](https://www.oxfordeconomics.com/resource/how-robots-change-the-world/)." Oxford Economics.
+1. Forward Future AI. (2025). ["The Value of a Ph.D. in the Age of AI."](https://www.forwardfuture.ai/p/the-value-of-a-ph-d-in-the-age-of-ai)
+2. Google DeepMind. (2025). ["Gemini Robotics brings AI into the physical world."](https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/)
+3. Nussbaum, M. C. (2011). ["Creating Capabilities: The Human Development Approach."](https://www.hup.harvard.edu/catalog.php?isbn=9780674072350) Harvard University Press.
+4. Tegmark, M. (2017). ["Life 3.0: Being Human in the Age of Artificial Intelligence."](https://www.penguinrandomhouse.com/books/530584/life-30-by-max-tegmark/) Knopf.
+5. Harari, Y. N. (2018). ["21 Lessons for the 21st Century."](https://www.ynharari.com/book/21-lessons-book/) Spiegel & Grau.
+6. Oxford Economics. (2023). ["How Robots Change the World: The Impact of Automation on Employment, Productivity, and Economic Growth."](https://www.oxfordeconomics.com/resource/how-robots-change-the-world/) Oxford Economics.

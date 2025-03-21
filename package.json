@@ -2,6 +2,7 @@
   "name": "adams-notebook-next",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,7 +16,8 @@
     "db:migrate": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "db:reset": "prisma migrate reset --force",
-    "export": "next export"
+    "export": "next export",
+    "export-posts": "node src/scripts/export-posts-to-markdown.js"
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",

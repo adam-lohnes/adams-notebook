@@ -1,8 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { Tag } from '@prisma/client';
 import { usePathname } from 'next/navigation';
+
+interface Tag {
+  id: string;
+  name: string;
+}
 
 interface TagListProps {
   tags: Tag[];

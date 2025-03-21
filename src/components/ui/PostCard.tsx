@@ -1,30 +1,42 @@
 'use client';
 
 import Link from 'next/link';
-import { Post, Tag } from '@prisma/client';
 import TagList from './TagList';
 
-type PostWithTags = Post & {
+interface Tag {
+  id: string;
+  name: string;
+}
+
+interface Post {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  date: Date | null;
   tags: Tag[];
-};
+}
 
 interface PostCardProps {
-  post: PostWithTags;
+  post: Post;
 }
 
 export default function PostCard({ post }: PostCardProps) {
-  // Format date
-  const formattedDate = new Date(post.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  // Format date in Pacific Time
+  const formattedDate = post.date 
+    ? new Date(post.date).toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'America/Los_Angeles'
+      })
+    : 'No date';
 
   return (
     <article className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
       <div className="p-6">
         <div className="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wider font-medium">
-          <time dateTime={post.date.toString()}>{formattedDate}</time>
+          <time dateTime={post.date?.toISOString()}>{formattedDate}</time>
         </div>
         
         <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">

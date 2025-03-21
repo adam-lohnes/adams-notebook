@@ -1,17 +1,8 @@
 ---
-title: 'AI Coding Tools: The Power Tools of Software Development'
-description: >-
-  Exploring how AI coding assistants function like power tools in
-  woodworking—amplifying skilled craftspeople while requiring foundational
-  knowledge and new skills for safe, effective use.
-date: '2025-03-21'
-tags:
-  - ai
-  - productivity
-  - tools
-  - software-development
-  - coding
-  - craftsmanship
+title: "AI Coding Tools: The Power Tools of Software Development"
+description: "Exploring how AI coding assistants function like power tools in woodworking—amplifying skilled craftspeople while requiring foundational knowledge and new skills for safe, effective use."
+date: 2025-03-21
+tags: [ai, coding, craftsmanship, software-development, tools, productivity]
 status: ready
 ---
 
@@ -31,10 +22,10 @@ Traditional woodworking began with hand tools—planes, chisels, handsaws, and s
 
 When power tools emerged—table saws, routers, planers, and drills—they dramatically increased what a woodworker could accomplish in a given time. But they also introduced new considerations:
 
-- Setup time: Power tools often require careful setup and jigs before use
-- Safety protocols: They can be dangerous without proper training and precautions
-- Understanding limitations: Each tool has specific capabilities and constraints
-- Maintenance requirements: More complex tools need more specialized care
+- **Setup time**: Power tools often require careful setup and jigs before use
+- **Safety protocols**: They can be dangerous without proper training and precautions
+- **Understanding limitations**: Each tool has specific capabilities and constraints
+- **Maintenance requirements**: More complex tools need more specialized care
 
 Importantly, the most successful woodworkers who adopted power tools were those who already understood the fundamentals of woodworking. Their knowledge of grain direction, joinery principles, and material properties transferred directly to power tool use, while they developed new skills specific to the tools themselves.
 
@@ -52,10 +43,10 @@ The parallel to programming is striking. Traditional coding education and practi
 
 AI coding assistants, like power tools, don't replace these fundamentals—they amplify and accelerate them while introducing new considerations:
 
-- Prompt engineering: Setting up the "jig" properly through effective prompting
-- Output validation: Carefully checking generated code for correctness
-- Understanding the tool's limitations: Knowing when AI assistance is helpful vs. misleading
-- Integration into workflow: Learning when to use AI vs. coding directly
+- **Prompt engineering**: Setting up the "jig" properly through effective prompting
+- **Output validation**: Carefully checking generated code for correctness
+- **Understanding the tool's limitations**: Knowing when AI assistance is helpful vs. misleading
+- **Integration into workflow**: Learning when to use AI vs. coding directly
 
 For example, when using GitHub Copilot to help implement complex algorithms like balanced tree implementations, experienced developers know to verify the edge cases in the generated code. Just as woodworkers might use power saws for straight cuts but switch to hand tools for fine details, developers might use AI to generate structure but manually implement critical error handling.
 

@@ -1,17 +1,33 @@
 import Link from 'next/link';
 import PostCard from '@/components/ui/PostCard';
 import ViewAllPostsCard from '@/components/ui/ViewAllPostsCard';
-import { getRecentPosts } from '@/lib/db/posts';
+import { getPublishedPosts } from '@/lib/markdown-loader';
 
-export default async function Home() {
-  // Fetch one more post than we want to display to determine if we need the "View All" card
-  const recentPosts = await getRecentPosts(6);
+export default function Home() {
+  // Get all published posts
+  const allPosts = getPublishedPosts();
+  
+  // Format posts for display
+  const formattedPosts = allPosts.map(post => ({
+    id: post.slug,
+    slug: post.slug,
+    title: post.title,
+    description: post.description,
+    content: post.content,
+    date: post.date || new Date(), // Provide fallback date
+    year: post.date ? post.date.getFullYear() : new Date().getFullYear(),
+    month: post.date ? post.date.getMonth() + 1 : new Date().getMonth() + 1,
+    day: post.date ? post.date.getDate() : new Date().getDate(),
+    createdAt: post.date || new Date(),
+    updatedAt: post.date || new Date(),
+    tags: post.tags.map(tag => ({ id: tag, name: tag })),
+  }));
   
   // Determine if we have enough posts to show the "View All" card
-  const displayViewAllCard = recentPosts.length >= 6;
+  const displayViewAllCard = formattedPosts.length >= 6;
   
   // If we have enough posts, only display 5 post cards plus the "View All" card
-  const postsToDisplay = displayViewAllCard ? recentPosts.slice(0, 5) : recentPosts;
+  const postsToDisplay = displayViewAllCard ? formattedPosts.slice(0, 5) : formattedPosts;
   
   return (
     <div className="max-w-4xl mx-auto">
