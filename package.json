@@ -7,26 +7,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "import:posts": "ts-node --project tsconfig.scripts.json src/scripts/import-posts.ts",
-    "import:drafts": "ts-node --project tsconfig.scripts.json src/scripts/import-drafts.ts && npm run post-process:drafts",
-    "import:images": "ts-node --project tsconfig.scripts.json src/scripts/copy-images.ts",
-    "import:all": "npm run import:posts && npm run import:drafts && npm run import:images",
-    "post-process:drafts": "ts-node --project tsconfig.scripts.json src/scripts/post-process-drafts.ts",
-    "db:migrate": "prisma migrate deploy",
-    "db:studio": "prisma studio",
-    "db:reset": "prisma migrate reset --force",
-    "export": "next export",
-    "export-posts": "node src/scripts/export-posts-to-markdown.js"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^6.5.0",
-    "better-sqlite3": "^11.8.1",
     "gray-matter": "^4.0.3",
     "marked": "^15.0.7",
     "next": "15.2.2",
     "node-html-parser": "^7.0.1",
-    "prisma": "^6.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
