@@ -1,7 +1,4 @@
-import fs from 'fs';
-import path from 'path';
 import { PrismaClient } from '@prisma/client';
-import matter from 'gray-matter';
 
 const prisma = new PrismaClient();
 

@@ -23,7 +23,7 @@ export default function TagList({ tags, className = '', maxVisible = 2 }: TagLis
     : null;
   
   // Prioritize the current tag if we're on a tag page
-  let displayTags = [...tags];
+  const displayTags = [...tags];
   
   if (currentTag) {
     // Find the current tag in the tags array

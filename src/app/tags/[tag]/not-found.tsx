@@ -5,7 +5,7 @@ export default function TagNotFound() {
     <div className="max-w-4xl mx-auto text-center py-12">
       <h1 className="text-4xl font-bold mb-4">Tag Not Found</h1>
       <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-        Sorry, the tag you're looking for doesn't exist or has no posts.
+        Sorry, the tag you&apos;re looking for doesn&apos;t exist or has no posts.
       </p>
       <Link 
         href="/posts"
