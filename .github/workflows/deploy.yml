@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      DATABASE_URL: "file:./prisma/dev.db"
-      DEBUG: "prisma:*"
     timeout-minutes: 10
     steps:
       - name: Checkout
@@ -57,67 +54,11 @@ jobs:
             echo "drafts/README.md does not exist"
           fi
           
-          # Debug prisma directory
-          echo "Prisma directory before:"
-          ls -la prisma/ || echo "No prisma directory"
-          echo "Prisma migrations before:"
-          ls -la prisma/migrations/ || echo "No migrations directory"
-          
-          # Create empty database
-          touch prisma/dev.db
-          
-          # Debug
-          echo "Content directories created:"
-          ls -la drafts/
-          echo "Prisma directory after:"
-          ls -la prisma/
-          echo "Prisma migrations after:"
-          ls -la prisma/migrations/ || echo "No migrations directory"
-          
           # Debug TypeScript configuration
           echo "TypeScript configuration:"
           cat tsconfig.json || echo "No tsconfig.json found"
           echo "TypeScript scripts configuration:"
           cat tsconfig.scripts.json || echo "No tsconfig.scripts.json found"
-        
-      - name: Create simple script files
-        run: |
-          # Create simple JavaScript versions of the scripts
-          mkdir -p dist/scripts
-          
-          # Create import-posts.js
-          cat > dist/scripts/import-posts.js << 'EOF'
-          console.log('Importing posts...');
-          console.log('No posts to import. This is a placeholder script.');
-          console.log('Posts import complete!');
-          EOF
-          
-          # Create import-drafts.js
-          cat > dist/scripts/import-drafts.js << 'EOF'
-          console.log('Importing drafts...');
-          console.log('No drafts to import. This is a placeholder script.');
-          console.log('Drafts import complete!');
-          EOF
-          
-          # Debug compiled scripts
-          echo "Created script files:"
-          ls -la dist/scripts/
-        
-      - name: Import content
-        timeout-minutes: 2
-        run: |
-          # Create SQLite database and import content
-          echo "Running Prisma migrations..."
-          npx prisma migrate deploy
-          
-          echo "Importing posts..."
-          node dist/scripts/import-posts.js
-          
-          echo "Importing drafts..."
-          node dist/scripts/import-drafts.js
-          
-          # Skip Prisma Studio as it seems to be hanging
-          echo "Skipping Prisma Studio to avoid hanging"
           
       - name: Build
         timeout-minutes: 5
