@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProjectBySlug, getAllProjectSlugs } from '@/lib/markdown-loader';
 
@@ -40,7 +39,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
   
-  const projectUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://adamsnotebook.com'}/projects/${project.slug}`;
   const tagObjects = project.tags.map(tag => ({ id: tag, name: tag }));
   const hasChapters = project.chapters && project.chapters.length > 0;
   

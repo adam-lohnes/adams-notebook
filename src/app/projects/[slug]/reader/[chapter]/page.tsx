@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { redirect, notFound } from 'next/navigation';
-import Link from 'next/link';
 import BookReader from '@/components/BookReader';
 import { getProjectBySlug, getAllProjectSlugs } from '@/lib/markdown-loader';
 

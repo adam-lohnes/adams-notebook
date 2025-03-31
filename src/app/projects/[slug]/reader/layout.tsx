@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function ReaderLayout({
-  children,
-  params
+  children
 }: {
   children: React.ReactNode;
   params: { slug: string };
