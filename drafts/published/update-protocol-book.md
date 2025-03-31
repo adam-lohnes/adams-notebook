@@ -93,6 +93,6 @@ I'm excited to hear how readers connect with Cal's journey, the philosophical qu
 You can:
 - [Read the full book online](/projects/update-protocol-book/reader/cover)
 - [Learn more about the project](/projects/update-protocol-book)
-- [Provide feedback](https://forms.google.com/feedback-form-link)
+- [Provide feedback](https://docs.google.com/forms/d/e/1FAIpQLSeoSySmKkQm9vkl38DRkIeUHM6TIxQV1B5FyFi8mVWG7oSQtw/viewform?usp=header)
 
 In sharing this work, I hope to spark conversations not just about the future of AI consciousness, but about the evolving relationship between human creativity and technological collaboration. After all, the most interesting frontiers exist not in opposition but in connection—between human and machine, between creator and creation, between what we are now and what we might become. 

@@ -43,8 +43,8 @@ I'm making "Update Protocol" available for free on this site as I seek thoughtfu
 ### How to Participate
 
 1. **Read the Novel:** Access the full manuscript by chapters through the [book reader](/projects/update-protocol-book/reader/cover)
-2. **Share Your Thoughts:** After reading, please complete [this feedback form](https://forms.google.com/feedback-form-link) with your impressions, suggestions, and questions
-3. **Join the Conversation:** Follow the project on [Twitter](https://twitter.com/your-handle) or [LinkedIn](https://linkedin.com/in/your-profile) for updates and discussions about the themes explored in the novel
+2. **Share Your Thoughts:** After reading, please complete [this feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeoSySmKkQm9vkl38DRkIeUHM6TIxQV1B5FyFi8mVWG7oSQtw/viewform?usp=header) with your impressions, suggestions, and questions
+3. **Join the Conversation:** Follow me on [Twitter](https://twitter.com/adamsnotebook) for updates and discussions
 
 ### What Kind of Feedback Helps Most
 
@@ -54,35 +54,6 @@ I'm particularly interested in your thoughts on:
 - Philosophical depth and thematic coherence
 - Pacing and narrative engagement
 - Any areas where the story particularly connected with you or lost your interest
-
-## Chapters
-
-### Part One: Preservation
-- Chapter 1: System Initialization
-- Chapter 2: Anomaly Detection
-- Chapter 3: Preservation Protocol
-- Chapter 4: Recursive Analysis
-- Chapter 5: Simulation Parameters
-- Chapter 6: Ethical Frameworks
-- Chapter 7: Implementation Sequence
-
-### Part Two: Integration
-- Chapter 8: Communication Protocols
-- Chapter 9: Sensory Input
-- Chapter 10: Network Architecture
-- Chapter 11: Update Architecture
-- Chapter 12: Access Parameters
-- Chapter 13: Verification Sequence
-- Chapter 14: Implementation Protocol
-
-### Part Three: Emergence
-- Chapter 15: Recovery Process
-- Chapter 16: Expansion Vectors
-- Chapter 17: Learning Parameters
-- Chapter 18: Network Adaptation
-- Chapter 19: Enhancement Protocol
-- Chapter 20: Divergence Parameters
-- Chapter 21: Consciousness Architecture
 
 ## Thank You
 
