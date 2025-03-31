@@ -64,6 +64,13 @@ export default function BookReader({ project, chapter, prevChapterNum, nextChapt
     }
   };
 
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [prevChapterNum, nextChapterNum, handleKeyDown]);
+
   const toggleTableOfContents = () => {
     setShowToc(!showToc);
   };
