@@ -6,11 +6,6 @@ import Script from 'next/script';
 const GA_MEASUREMENT_ID = 'G-F89LERZZ23';
 
 export function GoogleAnalytics() {
-  // Don't render analytics in development mode
-  if (process.env.NODE_ENV !== 'production') {
-    return null;
-  }
-
   return (
     <>
       <Script
