@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ProjectCard from '@/components/ui/ProjectCard';
 import { getProjects } from '@/lib/markdown-loader';
 

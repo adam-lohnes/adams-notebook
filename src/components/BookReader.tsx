@@ -15,6 +15,7 @@ interface BookReaderProps {
 
 export default function BookReader({ project, chapter, prevChapterNum, nextChapterNum }: BookReaderProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const [showToc, setShowToc] = useState(false);
   const [bookmark, setBookmark] = useState<number | null>(null);
   const contentRef = useRef<HTMLDivElement>(null);
