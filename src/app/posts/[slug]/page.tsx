@@ -60,7 +60,6 @@ export default async function PostPage({ params }: PostPageProps) {
       <div className="max-w-3xl mx-auto">
         <article>
           <header className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{post.title}</h1>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-gray-600 dark:text-gray-400 mb-4">
               <time dateTime={new Date(post.date).toISOString()}>
                 {new Date(post.date).toLocaleDateString('en-US', {
