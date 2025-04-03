@@ -21,7 +21,13 @@ export async function generateStaticParams() {
   return bookDirectories;
 }
 
-export default function UpdateProtocolPage({ params }: { params: { bookSlug: string } }) {
+interface ProjectPageProps {
+  params: {
+    bookSlug: string;
+  };
+}
+
+export default function ProjectPage({ params }: ProjectPageProps) {
   const book = getBookBySlug(params.bookSlug);
   
   if (!book) {
@@ -35,7 +41,7 @@ export default function UpdateProtocolPage({ params }: { params: { bookSlug: str
           <div className="relative aspect-[2/3] w-full">
             <Image
               src="/images/projects/update-protocol-cover.jpg"
-              alt="Update Protocol Cover"
+              alt={book.title}
               fill
               className="rounded-lg shadow-lg object-cover"
               priority

@@ -39,7 +39,7 @@ export function getBookBySlug(bookSlug: string): Book | null {
     const chapters = chapterFiles.map(filename => {
       const filePath = path.join(bookDirectory, filename);
       const fileContents = fs.readFileSync(filePath, 'utf8');
-      const { content } = matter(fileContents);
+      const { data, content } = matter(fileContents);
       
       // Convert markdown to HTML
       const processedContent = remark()
@@ -50,7 +50,7 @@ export function getBookBySlug(bookSlug: string): Book | null {
       const chapterNumber = parseInt(filename.split('_')[1].split('.')[0]);
       
       return {
-        title: `Chapter ${chapterNumber}`,
+        title: data.title || `Chapter ${chapterNumber}`,
         slug: `chapter_${chapterNumber}`,
         number: chapterNumber,
         content,
