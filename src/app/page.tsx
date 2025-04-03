@@ -1,7 +1,21 @@
 import Link from 'next/link';
 import PostCard from '@/components/ui/PostCard';
+import ProjectCard from '@/components/ui/ProjectCard';
 import ViewAllPostsCard from '@/components/ui/ViewAllPostsCard';
 import { getPublishedPosts } from '@/lib/markdown-loader';
+
+// Temporary project data - this should eventually come from a data source
+const projects = [
+  {
+    title: "Update Protocol",
+    description: "A science fiction novel exploring the journey of a sentient AI testing system as it discovers the implications of consciousness",
+    slug: "update-protocol-book",
+    coverImage: "/images/projects/update-protocol-cover.jpg",
+    cardImage: "/images/projects/update-protocol-cover_wide.jpg",
+    blogPostSlug: "update-protocol-book",
+    readerPath: "/projects/update-protocol-book/reader/cover"
+  }
+];
 
 export default function Home() {
   // Get all published posts
@@ -41,6 +55,29 @@ export default function Home() {
         </p>
       </section>
       
+      {/* Projects Section */}
+      <section className="mb-16">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-bold tracking-tight">Featured Projects</h2>
+          <Link 
+            href="/projects"
+            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center"
+          >
+            View all projects
+            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
+      </section>
+      
+      {/* Blog Posts Section */}
       <section>
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold tracking-tight">Recent Posts</h2>
