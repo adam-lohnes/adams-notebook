@@ -17,12 +17,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
       {/* Project Image */}
-      <div className="relative w-full h-48">
+      <div className="relative w-full h-fit">
         <Image
           src={project.cardImage || project.coverImage}
           alt={project.title}
-          fill
           className="object-cover"
+          width={414}
+          height={276}
         />
       </div>
       
