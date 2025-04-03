@@ -79,6 +79,7 @@ export default async function PostPage({ params }: PostPageProps) {
               dangerouslySetInnerHTML={{ __html: post.html }} 
               className="prose-headings:font-bold prose-headings:tracking-tight prose-a:text-gray-900 dark:prose-a:text-gray-100 prose-a:underline prose-a:decoration-gray-300 dark:prose-a:decoration-gray-700 hover:prose-a:decoration-gray-500 dark:hover:prose-a:decoration-gray-500 prose-img:rounded-lg prose-img:shadow-md"
             />
+            <SocialShare url={postUrl} title={post.title} className="mt-4" />
           </div>
           
           <footer className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">

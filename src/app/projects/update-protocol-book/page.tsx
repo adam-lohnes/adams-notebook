@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getBookBySlug } from '@/lib/book-loader';
 import { notFound } from 'next/navigation';
+import SocialShare from '@/components/ui/SocialShare';
 
 export const metadata = {
   title: "Update Protocol | Adam's Notebook",
@@ -14,6 +15,8 @@ export default function UpdateProtocolPage() {
   if (!book) {
     notFound();
   }
+
+  const projectUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://adamsnotebook.com'}/projects/${book.slug}`;
   
   return (
     <div className="max-w-4xl mx-auto">
@@ -30,6 +33,8 @@ export default function UpdateProtocolPage() {
           </div>
           
           <div className="mt-8 flex flex-col gap-4">
+            <SocialShare url={projectUrl} title={book.title} className="mt-4" />
+          
             <Link
               href="/posts/update-protocol-book"
               className="inline-flex items-center justify-center px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"

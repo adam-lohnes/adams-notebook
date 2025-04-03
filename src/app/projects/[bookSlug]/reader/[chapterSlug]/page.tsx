@@ -50,7 +50,7 @@ export default function ChapterPage({ params }: { params: { bookSlug: string, ch
   return (
     <div>
       {/* Navigation */}
-      <div className="mt-12 pb-6 border-b border-gray-200 dark:border-gray-800">
+      <div className="pb-6 border-b border-gray-200 dark:border-gray-800">
         <div className="flex justify-between items-center">
           {prevChapter ? (
             <Link

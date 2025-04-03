@@ -4,6 +4,7 @@ import { getBookBySlug } from '@/lib/book-loader';
 import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
+import SocialShare from '@/components/ui/SocialShare';
 
 // Dynamic metadata based on bookSlug
 export async function generateMetadata({ params }: { params: { bookSlug: string } }) {
@@ -38,6 +39,8 @@ export default function ProjectPage({ params }: { params: { bookSlug: string } }
   if (!book) {
     notFound();
   }
+
+  const projectUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://adamsnotebook.com'}/projects/${book.slug}`;
   
   return (
     <div className="max-w-4xl mx-auto">
@@ -54,6 +57,8 @@ export default function ProjectPage({ params }: { params: { bookSlug: string } }
           </div>
           
           <div className="mt-8 flex flex-col gap-4">
+            <SocialShare url={projectUrl} title={book.title} className="mt-4" />
+
             <Link
               href="/posts/update-protocol-book"
               className="inline-flex items-center justify-center px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
