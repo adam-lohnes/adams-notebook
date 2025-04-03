@@ -4,13 +4,6 @@ import BookReaderLayout from '@/components/layout/BookReaderLayout';
 import fs from 'fs';
 import path from 'path';
 
-interface BookReaderLayoutProps {
-  children: React.ReactNode;
-  params: {
-    bookSlug: string;
-  };
-}
-
 // Required for static exports (output: export)
 export async function generateStaticParams() {
   // Get list of book directories
@@ -22,7 +15,13 @@ export async function generateStaticParams() {
   return bookDirectories;
 }
 
-export default function Layout({ children, params }: BookReaderLayoutProps) {
+export default function Layout({ 
+  children,
+  params
+}: { 
+  children: React.ReactNode;
+  params: { bookSlug: string }
+}) {
   const book = getBookBySlug(params.bookSlug);
   
   if (!book) {

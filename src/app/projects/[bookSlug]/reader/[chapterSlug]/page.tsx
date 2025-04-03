@@ -4,13 +4,6 @@ import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 
-interface ChapterPageProps {
-  params: {
-    bookSlug: string;
-    chapterSlug: string;
-  };
-}
-
 // Required for static exports (output: export)
 export async function generateStaticParams() {
   // Get list of book directories
@@ -41,7 +34,7 @@ export async function generateStaticParams() {
   return params;
 }
 
-export default function ChapterPage({ params }: ChapterPageProps) {
+export default function ChapterPage({ params }: { params: { bookSlug: string, chapterSlug: string } }) {
   const book = getBookBySlug(params.bookSlug);
   const chapter = getChapterBySlug(params.bookSlug, params.chapterSlug);
   
@@ -96,6 +89,7 @@ export default function ChapterPage({ params }: ChapterPageProps) {
       </div>
 
       <div className="prose dark:prose-invert max-w-none">
+        <h1>{chapter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: chapter.html }} />
       </div>
       

@@ -5,10 +5,21 @@ import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
 
-export const metadata = {
-  title: "Update Protocol | Adam's Notebook",
-  description: "A science fiction novel exploring the journey of a sentient AI testing system as it discovers the implications of consciousness",
-};
+// Dynamic metadata based on bookSlug
+export async function generateMetadata({ params }: { params: { bookSlug: string } }) {
+  const book = getBookBySlug(params.bookSlug);
+  if (!book) {
+    return {
+      title: "Project Not Found | Adam's Notebook",
+      description: "This project could not be found"
+    };
+  }
+  
+  return {
+    title: `${book.title} | Adam's Notebook`,
+    description: book.description
+  };
+}
 
 // Required for static exports (output: export)
 export async function generateStaticParams() {
@@ -21,13 +32,7 @@ export async function generateStaticParams() {
   return bookDirectories;
 }
 
-interface ProjectPageProps {
-  params: {
-    bookSlug: string;
-  };
-}
-
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default function ProjectPage({ params }: { params: { bookSlug: string } }) {
   const book = getBookBySlug(params.bookSlug);
   
   if (!book) {

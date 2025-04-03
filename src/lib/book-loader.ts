@@ -17,6 +17,7 @@ interface Book {
   title: string;
   description: string;
   coverImage: string;
+  coverHtml?: string;
   chapters: Chapter[];
 }
 
@@ -74,6 +75,7 @@ export function getBookBySlug(bookSlug: string): Book | null {
       title: coverData.title || 'Untitled Book',
       description: coverData.description || '',
       coverImage: coverData.coverImage || '',
+      coverHtml,
       chapters
     };
   } catch (error) {
@@ -91,17 +93,10 @@ export function getChapterBySlug(bookSlug: string, chapterSlug: string): Chapter
 
 export function getCoverPage(bookSlug: string): { html: string } | null {
   try {
-    const coverPath = path.join(booksDirectory, bookSlug, 'cover.md');
-    const coverContents = fs.readFileSync(coverPath, 'utf8');
-    const { content } = matter(coverContents);
+    const book = getBookBySlug(bookSlug);
+    if (!book || !book.coverHtml) return null;
     
-    // Convert markdown to HTML
-    const coverHtml = remark()
-      .use(html)
-      .processSync(content)
-      .toString();
-    
-    return { html: coverHtml };
+    return { html: book.coverHtml };
   } catch (error) {
     console.error(`Error loading cover for ${bookSlug}:`, error);
     return null;

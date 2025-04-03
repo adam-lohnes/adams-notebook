@@ -4,12 +4,6 @@ import Image from 'next/image';
 import fs from 'fs';
 import path from 'path';
 
-interface CoverPageProps {
-  params: {
-    bookSlug: string;
-  };
-}
-
 // Required for static exports (output: export)
 export async function generateStaticParams() {
   // Get list of book directories
@@ -21,7 +15,7 @@ export async function generateStaticParams() {
   return bookDirectories;
 }
 
-export default function CoverPage({ params }: CoverPageProps) {
+export default function CoverPage({ params }: { params: { bookSlug: string } }) {
   const book = getBookBySlug(params.bookSlug);
   const cover = getCoverPage(params.bookSlug);
   
