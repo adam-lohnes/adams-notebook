@@ -91,7 +91,7 @@ export default function UpdateProtocolPage() {
             <div className="not-prose mt-8">
               <Link
                 href="/projects/update-protocol-book/reader/cover"
-                className="inline-flex items-center text-lg font-medium text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                className="inline-flex items-center text-lg font-medium hover:text-neon-blue-hover transition-colors"
               >
                 Begin Your Journey
                 <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

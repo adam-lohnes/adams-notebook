@@ -5,20 +5,24 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --neon-blue: #0077ff;
+  --neon-blue-hover: #6666ff;
 }
 
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --neon-blue: #0077ff;
+  --neon-blue-hover: #6666ff;
 }
 
 @layer base {
   :root {
     --tw-prose-body: theme('colors.gray.700');
     --tw-prose-headings: theme('colors.gray.900');
-    --tw-prose-links: theme('colors.gray.900');
-    --tw-prose-underline: theme('colors.gray.300');
-    --tw-prose-underline-hover: theme('colors.gray.500');
+    --tw-prose-links: var(--neon-blue);
+    --tw-prose-underline: var(--neon-blue);
+    --tw-prose-underline-hover: var(--neon-blue-hover);
     --tw-prose-bold: theme('colors.gray.900');
     --tw-prose-counters: theme('colors.gray.500');
     --tw-prose-bullets: theme('colors.gray.300');
@@ -37,9 +41,9 @@
   .dark {
     --tw-prose-body: theme('colors.gray.300');
     --tw-prose-headings: theme('colors.gray.100');
-    --tw-prose-links: theme('colors.gray.100');
-    --tw-prose-underline: theme('colors.gray.700');
-    --tw-prose-underline-hover: theme('colors.gray.500');
+    --tw-prose-links: var(--neon-blue);
+    --tw-prose-underline: var(--neon-blue);
+    --tw-prose-underline-hover: var(--neon-blue-hover);
     --tw-prose-bold: theme('colors.gray.100');
     --tw-prose-counters: theme('colors.gray.400');
     --tw-prose-bullets: theme('colors.gray.600');
@@ -81,4 +85,39 @@
 
 .dark ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(75, 85, 99, 0.7);
+}
+
+/* Global link styling */
+a {
+  color: var(--neon-blue);
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+a:hover {
+  color: var(--neon-blue-hover);
+  text-shadow: 0 0 8px rgba(0, 119, 255, 0.5);
+}
+
+/* Nav link styling (maintains readable nav colors but adds glow on hover) */
+header nav a, footer nav a {
+  color: inherit;
+  text-shadow: none;
+}
+
+header nav a:hover, footer nav a:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 8px rgba(0, 119, 255, 0.5);
+}
+
+/* Ensure prose content links have proper styling */
+.prose a {
+  color: var(--neon-blue) !important;
+  text-decoration-color: var(--neon-blue) !important;
+  font-weight: 500;
+}
+
+.prose a:hover {
+  color: var(--neon-blue-hover) !important;
+  text-decoration-color: var(--neon-blue-hover) !important;
+  text-shadow: 0 0 8px rgba(0, 119, 255, 0.5);
 }
