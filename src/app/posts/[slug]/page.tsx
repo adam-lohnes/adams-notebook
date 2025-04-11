@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import PostTagList from '@/components/ui/PostTagList';
 import SocialShare from '@/components/ui/SocialShare';
@@ -60,6 +61,17 @@ export default async function PostPage({ params }: PostPageProps) {
       <div className="max-w-3xl mx-auto">
         <article>
           <header className="mb-8">
+            {post.heroImage && (
+              <div className="relative w-full aspect-[16/9] mb-8 rounded-lg overflow-hidden">
+                <Image
+                  src={post.heroImage}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-gray-600 dark:text-gray-400 mb-4">
               <time dateTime={new Date(post.date).toISOString()}>
                 {new Date(post.date).toLocaleDateString('en-US', {

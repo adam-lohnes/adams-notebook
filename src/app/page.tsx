@@ -35,6 +35,7 @@ export default function Home() {
     createdAt: post.date || new Date(),
     updatedAt: post.date || new Date(),
     tags: post.tags.map(tag => ({ id: tag, name: tag })),
+    heroImage: post.heroImage,
   }));
   
   // Determine if we have enough posts to show the "View All" card

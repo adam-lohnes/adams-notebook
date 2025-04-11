@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import TagList from './TagList';
 
 interface Tag {
@@ -15,6 +16,7 @@ interface Post {
   description: string;
   date: Date | null;
   tags: Tag[];
+  heroImage?: string;
 }
 
 interface PostCardProps {
@@ -34,6 +36,16 @@ export default function PostCard({ post }: PostCardProps) {
 
   return (
     <article className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
+      {post.heroImage && (
+        <Link href={`/posts/${post.slug}`} className="block relative w-full aspect-[16/9]">
+          <Image
+            src={post.heroImage}
+            alt={post.title}
+            fill
+            className="object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </Link>
+      )}
       <div className="p-6">
         <div className="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wider font-medium">
           <time dateTime={post.date ? new Date(post.date).toISOString() : ''}>{formattedDate}</time>
