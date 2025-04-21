@@ -121,3 +121,8 @@ header nav a:hover, footer nav a:hover {
   text-decoration-color: var(--neon-blue-hover) !important;
   text-shadow: 0 0 8px rgba(0, 119, 255, 0.5);
 }
+
+.prose img {
+  max-width: 80%;
+  margin: auto;
+}
