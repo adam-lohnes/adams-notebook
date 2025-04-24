@@ -61,6 +61,9 @@ export default function Header() {
               <Link href="/posts/hello-world" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                 About
               </Link>
+              <Link href="/contact" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                Contact
+              </Link>
             </nav>
             
             {/* Theme toggle button */}
@@ -109,6 +112,13 @@ export default function Header() {
               Posts
             </Link>
             <Link 
+              href="/projects" 
+              className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Projects
+            </Link>
+            <Link 
               href="/tags" 
               className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
@@ -121,6 +131,13 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               About
+            </Link>
+            <Link 
+              href="/contact" 
+              className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
             </Link>
           </nav>
         )}

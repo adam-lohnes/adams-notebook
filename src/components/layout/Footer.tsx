@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-8">
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-4">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-600 dark:text-gray-400">
               © {currentYear} Adam Lohnes. All rights reserved.
@@ -50,6 +50,18 @@ export default function Footer() {
               </svg>
             </Link> */}
           </div>
+        </div>
+        
+        <div className="flex flex-wrap justify-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
+          <Link href="/privacy-policy" className="hover:text-gray-900 dark:hover:text-white transition-colors mb-2">
+            Privacy Policy
+          </Link>
+          <Link href="/ai-content-policy" className="hover:text-gray-900 dark:hover:text-white transition-colors mb-2">
+            AI Content Policy
+          </Link>
+          <Link href="/contact" className="hover:text-gray-900 dark:hover:text-white transition-colors mb-2">
+            Contact
+          </Link>
         </div>
       </div>
     </footer>
