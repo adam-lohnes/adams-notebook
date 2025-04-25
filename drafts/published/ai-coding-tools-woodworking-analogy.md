@@ -13,6 +13,7 @@ tags:
   - coding
   - craftsmanship
 status: ready
+heroImage: "/images/posts/ai-woodworking-hero.svg"
 ---
 
 # AI Coding Tools: The Power Tools of Software Development
