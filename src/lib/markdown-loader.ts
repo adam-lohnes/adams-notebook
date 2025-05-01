@@ -76,9 +76,9 @@ export function getPublishedPosts(dir: string): MarkdownPost[] {
   }
 }
 
-export function getPostBySlug(slug: string): MarkdownPost | null {
+export function getPostBySlug(dir: string, slug: string): MarkdownPost | null {
   try {
-    const publishedDir = path.join(process.cwd(), 'drafts', 'published');
+    const publishedDir = path.join(process.cwd(), dir);
     const filePath = path.join(publishedDir, `${slug}.md`);
     
     if (!fs.existsSync(filePath)) {
