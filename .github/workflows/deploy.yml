@@ -43,16 +43,8 @@ jobs:
           
       - name: Prepare content directories
         run: |
-          # Ensure drafts directory exists with proper structure
-          mkdir -p drafts/in-progress drafts/published drafts/ideas
-          
-          # No need to copy README.md to itself - it's already in the right place
-          # Just check if it exists for debugging
-          if [ -f "drafts/README.md" ]; then
-            echo "drafts/README.md exists"
-          else
-            echo "drafts/README.md does not exist"
-          fi
+          # Ensure directories exists with proper structure
+          mkdir -p posts projects tutorials
           
           # Debug TypeScript configuration
           echo "TypeScript configuration:"

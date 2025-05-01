@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default function PostsPage() {
-  const posts = getPublishedPosts();
+  const posts = getPublishedPosts('posts');
   
   // Format posts for display
   const formattedPosts = posts.map(post => ({

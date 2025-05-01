@@ -12,7 +12,7 @@ type PostPageProps = {
 };
 
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
+  const slugs = getAllPostSlugs('posts');
   return slugs.map(slug => ({
     slug,
   }));

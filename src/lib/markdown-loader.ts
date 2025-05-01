@@ -14,9 +14,9 @@ export interface MarkdownPost {
   heroImage?: string;
 }
 
-export function getPublishedPosts(): MarkdownPost[] {
+export function getPublishedPosts(dir: string): MarkdownPost[] {
   try {
-    const publishedDir = path.join(process.cwd(), 'drafts', 'published');
+    const publishedDir = path.join(process.cwd(), dir);
     
     // Check if directory exists
     if (!fs.existsSync(publishedDir)) {
@@ -124,9 +124,9 @@ export function getPostBySlug(slug: string): MarkdownPost | null {
   }
 }
 
-export function getAllPostSlugs(): string[] {
+export function getAllPostSlugs(dir: string): string[] {
   try {
-    const publishedDir = path.join(process.cwd(), 'drafts', 'published');
+    const publishedDir = path.join(process.cwd(), dir);
     
     // Check if directory exists
     if (!fs.existsSync(publishedDir)) {
@@ -146,7 +146,7 @@ export function getAllPostSlugs(): string[] {
 
 export function getAllTags(): { name: string; count: number }[] {
   try {
-    const posts = getPublishedPosts();
+    const posts = getPublishedPosts('posts');
     const tagCounts = new Map<string, number>();
     
     // Count occurrences of each tag
@@ -169,7 +169,7 @@ export function getAllTags(): { name: string; count: number }[] {
 
 export function getPostsByTag(tagName: string): MarkdownPost[] {
   try {
-    const posts = getPublishedPosts();
+    const posts = getPublishedPosts('posts');
     return posts.filter(post => post.tags.includes(tagName));
   } catch (error) {
     console.error(`Error getting posts for tag ${tagName}:`, error);

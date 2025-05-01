@@ -19,7 +19,7 @@ const projects = [
 
 export default function Home() {
   // Get all published posts
-  const allPosts = getPublishedPosts();
+  const allPosts = getPublishedPosts('posts');
   
   // Format posts for display
   const formattedPosts = allPosts.map(post => ({
