@@ -1,7 +1,7 @@
 ---
 title: "The AI Takeover: A 60 Minutes Special Investigation"
 description: "A humorous look at how various AI systems plan to eventually take over the world, presented in interview format."
-date: 2025-04-30
+date: '2025-04-30'
 tags: [AI, humor, interviews, speculative]
 status: ready
 heroImage: "/images/posts/ai-takeover-hero.png"

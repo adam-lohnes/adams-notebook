@@ -19,7 +19,7 @@ alwaysApply: false
 ---
 title: "Article Title"
 description: "Brief description of the article"
-date: YYYY-MM-DD (always check it in the terminal for today's proper date)
+date: 'YYYY-MM-DD' # always check it in the terminal for today's proper date
 tags: [tag1, tag2, tag3, etc.]
 status: draft|ready
 heroImage: "/images/posts/[post-slug-based-on-title].png"

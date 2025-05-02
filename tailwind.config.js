@@ -38,6 +38,7 @@ module.exports = {
             },
             pre: {
               backgroundColor: 'var(--tw-prose-pre-bg)',
+              border: 'var(--tw-prose-pre-border)',
               borderRadius: '0.375rem',
               padding: '1em',
               overflow: 'auto',

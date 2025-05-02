@@ -21,9 +21,10 @@ interface Post {
 
 interface PostCardProps {
   post: Post;
+  basePath?: string; // Optional path prefix
 }
 
-export default function PostCard({ post }: PostCardProps) {
+export default function PostCard({ post, basePath }: PostCardProps) {
   // Format date in Pacific Time
   const formattedDate = post.date 
     ? new Date(post.date).toLocaleString('en-US', {
@@ -34,10 +35,26 @@ export default function PostCard({ post }: PostCardProps) {
       })
     : 'No date';
 
+  // Determine the correct path for the post
+  let postPath = post.slug;
+  
+  // If the slug already contains a full path with slashes in the middle, use it directly
+  if (postPath.includes('/') && !postPath.startsWith('/')) {
+    postPath = `/${postPath}`;
+  } 
+  // If a basePath is provided, use it
+  else if (basePath) {
+    postPath = `${basePath}/${post.slug}`;
+  }
+  // Default to /posts/ prefix for backward compatibility
+  else {
+    postPath = `/posts/${post.slug}`;
+  }
+
   return (
     <article className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
       {post.heroImage && (
-        <Link href={`/posts/${post.slug}`} className="block relative w-full aspect-[16/9]">
+        <Link href={postPath} className="block relative w-full aspect-[16/9]">
           <Image
             src={post.heroImage}
             alt={post.title}
@@ -53,7 +70,7 @@ export default function PostCard({ post }: PostCardProps) {
         
         <h2 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
           <Link 
-            href={`/posts/${post.slug}`}
+            href={postPath}
             className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             {post.title}
@@ -68,7 +85,7 @@ export default function PostCard({ post }: PostCardProps) {
           <TagList tags={post.tags} />
           
           <Link 
-            href={`/posts/${post.slug}`}
+            href={postPath}
             className="inline-flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
           >
             Read more

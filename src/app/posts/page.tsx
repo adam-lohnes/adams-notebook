@@ -37,7 +37,7 @@ export default function PostsPage() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {formattedPosts.map((post) => (
-          <PostCard key={post.id} post={post} />
+          <PostCard key={post.id} post={post} basePath="/posts" />
         ))}
       </div>
     </div>

@@ -52,11 +52,11 @@ export default function Header() {
               <Link href="/posts" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                 Posts
               </Link>
+              <Link href="/tutorials" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                Tutorials
+              </Link>
               <Link href="/projects" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                 Projects
-              </Link>
-              <Link href="/tags" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                Tags
               </Link>
               <Link href="/posts/hello-world" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                 About
@@ -112,18 +112,18 @@ export default function Header() {
               Posts
             </Link>
             <Link 
+              href="/tutorials" 
+              className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Tutorials
+            </Link>
+            <Link 
               href="/projects" 
               className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
-            </Link>
-            <Link 
-              href="/tags" 
-              className="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Tags
             </Link>
             <Link 
               href="/posts/hello-world" 

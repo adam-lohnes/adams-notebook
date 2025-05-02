@@ -1,7 +1,7 @@
 ---
 title: "Supercharging Your Projects with Cursor AI: The Instructions Generator Approach"
 description: "Learn how to maximize your productivity with Cursor AI using a structured instructions generator approach"
-date: 2025-04-10
+date: '2025-04-10'
 tags: [cursor, ai, productivity, development, instructions]
 status: published
 heroImage: "/images/posts/cursor-instructions-generator.png"

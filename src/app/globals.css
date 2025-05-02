@@ -33,7 +33,7 @@
     --tw-prose-code-bg: theme('colors.gray.100');
     --tw-prose-pre-code: theme('colors.gray.100');
     --tw-prose-pre-bg: theme('colors.gray.900');
-    --tw-prose-pre-border: transparent;
+    --tw-prose-pre-border: 1px solid #999999;
     --tw-prose-th-borders: theme('colors.gray.200');
     --tw-prose-td-borders: theme('colors.gray.100');
   }
@@ -54,7 +54,7 @@
     --tw-prose-code-bg: theme('colors.gray.800');
     --tw-prose-pre-code: theme('colors.gray.200');
     --tw-prose-pre-bg: theme('colors.gray.800');
-    --tw-prose-pre-border: transparent;
+    --tw-prose-pre-border: 1px solid #999999;
     --tw-prose-th-borders: theme('colors.gray.700');
     --tw-prose-td-borders: theme('colors.gray.800');
   }
