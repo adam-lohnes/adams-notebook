@@ -12,7 +12,6 @@ alwaysApply: false
 - Use Markdown (`.md`) files for posts
 - Name files with a descriptive title: `article-title-slug.md`
 - Include frontmatter at the top of each file with metadata
-- See `drafts/README.md` for complete instructions
 
 ## Frontmatter Template
 ```yaml

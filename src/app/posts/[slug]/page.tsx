@@ -61,8 +61,18 @@ export default async function PostPage({ params }: PostPageProps) {
       <div className="max-w-3xl mx-auto">
         <article>
           <header className="mb-8">
-            {post.heroImage && (
-              <div className="relative w-full aspect-[16/9] mb-8 rounded-lg overflow-hidden">
+            <div className="relative w-full aspect-[16/9] mb-8 rounded-lg overflow-hidden">
+              {post.heroVideo && (
+                <video
+                  src={post.heroVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
+              {post.heroImage && !post.heroVideo && (
                 <Image
                   src={post.heroImage}
                   alt={post.title}
@@ -70,8 +80,8 @@ export default async function PostPage({ params }: PostPageProps) {
                   className="object-cover"
                   priority
                 />
-              </div>
-            )}
+              )}
+            </div>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-gray-600 dark:text-gray-400 mb-4">
               <time dateTime={new Date(post.date).toISOString()}>
                 {new Date(post.date).toLocaleDateString('en-US', {

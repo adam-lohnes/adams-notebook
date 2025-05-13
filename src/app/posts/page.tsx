@@ -24,6 +24,7 @@ export default function PostsPage() {
     updatedAt: post.date || new Date(),
     tags: post.tags.map(tag => ({ id: tag, name: tag })),
     heroImage: post.heroImage,
+    heroVideo: post.heroVideo,
   }));
   
   return (

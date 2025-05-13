@@ -12,6 +12,7 @@ export interface MarkdownPost {
   html: string;
   tags: string[];
   heroImage?: string;
+  heroVideo?: string;
 }
 
 export function getPublishedPosts(dir: string): MarkdownPost[] {
@@ -65,6 +66,7 @@ export function getPublishedPosts(dir: string): MarkdownPost[] {
         html,
         tags: data.tags || [],
         heroImage: data.heroImage,
+        heroVideo: data.heroVideo,
       };
     });
     
@@ -117,6 +119,7 @@ export function getPostBySlug(dir: string, slug: string): MarkdownPost | null {
       html,
       tags: data.tags || [],
       heroImage: data.heroImage,
+      heroVideo: data.heroVideo,
     };
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error);
