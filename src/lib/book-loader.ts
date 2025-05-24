@@ -27,17 +27,20 @@ export function getBookBySlug(bookSlug: string): Book | null {
   try {
     const bookDirectory = path.join(booksDirectory, bookSlug);
     
-    // Get all chapter files
-    const chapterFiles = fs.readdirSync(bookDirectory)
-      .filter(file => file.startsWith('chapter_') && file.endsWith('.md'))
+    // Get all chapter or story files
+    const contentFiles = fs.readdirSync(bookDirectory)
+      .filter(file => 
+        (file.startsWith('chapter_') || file.startsWith('story_')) && 
+        file.endsWith('.md')
+      )
       .sort((a, b) => {
         const numA = parseInt(a.split('_')[1].split('.')[0]);
         const numB = parseInt(b.split('_')[1].split('.')[0]);
         return numA - numB;
       });
     
-    // Process each chapter
-    const chapters = chapterFiles.map(filename => {
+    // Process each content file
+    const chapters = contentFiles.map(filename => {
       const filePath = path.join(bookDirectory, filename);
       const fileContents = fs.readFileSync(filePath, 'utf8');
       const { data, content } = matter(fileContents);
@@ -48,12 +51,14 @@ export function getBookBySlug(bookSlug: string): Book | null {
         .processSync(content)
         .toString();
       
-      const chapterNumber = parseInt(filename.split('_')[1].split('.')[0]);
+      const number = parseInt(filename.split('_')[1].split('.')[0]);
+      const prefix = filename.startsWith('chapter_') ? 'chapter' : 'story';
+      const isStory = filename.startsWith('story_');
       
       return {
-        title: data.title || `Chapter ${chapterNumber}`,
-        slug: `chapter_${chapterNumber}`,
-        number: chapterNumber,
+        title: data.title || (isStory ? `Story ${number}` : `Chapter ${number}`),
+        slug: `${prefix}_${number}`,
+        number,
         content,
         html: processedContent
       };

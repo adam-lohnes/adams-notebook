@@ -4,7 +4,7 @@ description: "How I created my second AI-assisted novel about machine consciousn
 date: '2025-03-31'
 tags: [ai, writing, books, creativity, projects]
 status: ready
-coverImage: "/images/projects/update-protocol-cover.jpg"
+heroImage: "/images/projects/update-protocol-cover.jpg"
 ---
 
 # From Code to Consciousness: The Making of "Update Protocol"

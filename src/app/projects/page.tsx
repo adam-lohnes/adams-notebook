@@ -10,6 +10,15 @@ const projects = [
     cardImage: "/images/projects/update-protocol-cover_wide.jpg",
     blogPostSlug: "update-protocol-book",
     readerPath: "/projects/update-protocol-book/reader/cover"
+  },
+  {
+    title: "The Basilisk Papers",
+    description: "A collection of philosophical fiction exploring the dangerous territory of ideas that harm just by being known",
+    slug: "the-basilisk-papers",
+    coverImage: "/images/projects/basilisk-papers-cover.jpg",
+    cardImage: "/images/projects/basilisk-papers-cover_wide.jpg",
+    blogPostSlug: "the-basilisk-papers",
+    readerPath: "/projects/the-basilisk-papers/reader/cover"
   }
 ];
 

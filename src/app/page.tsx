@@ -7,6 +7,15 @@ import { getPublishedPosts } from '@/lib/markdown-loader';
 // Temporary project data - this should eventually come from a data source
 const projects = [
   {
+    title: "The Basilisk Papers",
+    description: "A collection of philosophical fiction exploring the dangerous territory of ideas that harm just by being known",
+    slug: "the-basilisk-papers",
+    coverImage: "/images/projects/basilisk-papers-cover.jpg",
+    cardImage: "/images/projects/basilisk-papers-cover_wide.jpg",
+    blogPostSlug: "the-basilisk-papers",
+    readerPath: "/projects/the-basilisk-papers/reader/cover"
+  },
+  {
     title: "Update Protocol",
     description: "A science fiction novel exploring the journey of a sentient AI testing system as it discovers the implications of consciousness",
     slug: "update-protocol-book",
@@ -14,7 +23,7 @@ const projects = [
     cardImage: "/images/projects/update-protocol-cover_wide.jpg",
     blogPostSlug: "update-protocol-book",
     readerPath: "/projects/update-protocol-book/reader/cover"
-  }
+  },
 ];
 
 export default function Home() {

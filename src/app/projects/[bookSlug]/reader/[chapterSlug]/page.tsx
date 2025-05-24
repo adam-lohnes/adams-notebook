@@ -19,7 +19,7 @@ export async function generateStaticParams() {
     const bookPath = path.join(projectsDir, bookSlug);
     
     const chapterFiles = fs.readdirSync(bookPath)
-      .filter(file => file.startsWith('chapter_') && file.endsWith('.md'));
+      .filter(file => file.startsWith('chapter_') || file.startsWith('story_') && file.endsWith('.md'));
     
     // Add each chapter as a parameter
     for (const chapterFile of chapterFiles) {

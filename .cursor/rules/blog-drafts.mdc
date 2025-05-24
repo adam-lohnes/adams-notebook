@@ -39,7 +39,7 @@ heroImage: "/images/posts/[post-slug-based-on-title].png"
 - [ ] Add meta description
 - [ ] Set appropriate tags
 - [ ] Update status to "ready"
-- [ ] generate 5 posts for Twitter and 1 LinkedIn post to promote the new blog article
+- [ ] generate 10 posts for Twitter and 1 LinkedIn post to promote the new blog article
   - [ ] add them to `/docs/social-media/[post-slug]-promotion.md`
 
 ## Content Categories
