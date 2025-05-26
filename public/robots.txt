@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow the secret lab section
+Disallow: /lab/
+Disallow: /lab
+
+Sitemap: https://adamsnotebook.com/sitemap.xml 
