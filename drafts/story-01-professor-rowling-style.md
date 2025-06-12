@@ -1,5 +1,5 @@
 ---
-title: "story-02-participation-paradox"
+title: "story 01 The Professor's Dilemma"
 ---
 
 # The Professor's Dilemma
